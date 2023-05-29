@@ -1,0 +1,324 @@
+/* Establece el conjunto de caracteres como UTF-8 */
+@charset "UTF-8";
+
+/* Importa la fuente de Google Fonts llamada Roboto con un peso de 500 */
+@import url(https://fonts.googleapis.com/css?family=Roboto:500&display=swap);
+
+/* Define variables de color utilizando la notación de variables de CSS */
+:root {
+    --green: #ecfaec;       /* Color verde claro */
+    --dark-green: #166639;  /* Color verde oscuro */
+    --white: #ffffff;       /* Color blanco */
+    --black: #202020;       /* Color negro */
+}
+  
+/* Estilos para el elemento <body> */
+body {
+    position: absolute;     /* Posicionamiento absoluto */
+    left: 0;                /* Alineación a la izquierda */
+    top: 0;                 /* Alineación arriba */
+    width: 100%;            /* Ancho del 100% de la ventana */
+    height: 100%;           /* Altura del 100% de la ventana */
+    font-family: "Roboto", sans-serif;  /* Fuente de texto Roboto o una fuente sans-serif genérica */
+    background-color: var(--green);     /* Color de fondo utilizando la variable --green */
+    overflow: hidden;       /* Oculta el contenido que excede los límites del cuerpo */
+}
+
+/* Estilos para elementos con la clase .table */
+.table {
+  display: table; /* Establece el elemento como una tabla */
+  width: 100%; /* Ancho del 100% del contenedor */
+  height: 100%; /* Altura del 100% del contenedor */
+}
+
+/* Estilos para elementos con la clase .table-cell */
+.table-cell {
+  display: table-cell; /* Establece el elemento como una celda de tabla */
+  vertical-align: middle; /* Alinea verticalmente el contenido en el centro */
+  -moz-transition: all 0.5s; /* Transición animada para propiedades en navegadores Firefox */
+  -o-transition: all 0.5s; /* Transición animada para propiedades en navegadores Opera */
+  -webkit-transition: all 0.5s; /* Transición animada para propiedades en navegadores WebKit (Chrome, Safari) */
+  transition: all 0.5s; /* Transición animada para propiedades */
+}
+
+/* Estilos para elementos con la clase .container */
+.container {
+  position: relative; /* Establece el posicionamiento relativo */
+  width: 600px; /* Ancho de 600 píxeles */
+  margin: 30px auto 0; /* Márgenes superior e inferior automáticos y margen superior de 30 píxeles */
+  height: 320px; /* Altura de 320 píxeles */
+  background-color: #d6aeeb; /* Color de fondo en formato hexadecimal */
+  top: 50%; /* Desplaza el elemento hacia abajo en un 50% de su contenedor padre */
+  margin-top: -160px; /* Desplaza el elemento hacia arriba en la mitad de su altura */
+  -moz-transition: all 0.5s; /* Transición animada para propiedades en navegadores Firefox */
+  -o-transition: all 0.5s; /* Transición animada para propiedades en navegadores Opera */
+  -webkit-transition: all 0.5s; /* Transición animada para propiedades en navegadores WebKit (Chrome, Safari) */
+  transition: all 0.5s; /* Transición animada para propiedades */
+}
+
+/* Estilos para elementos con la clase .box dentro de elementos con la clase .container */
+.container .box {
+  position: absolute; /* Establece el posicionamiento absoluto */
+  left: 0; /* Alineación a la izquierda */
+  top: 0; /* Alineación arriba */
+  width: 100%; /* Ancho del 100% del contenedor padre */
+  height: 100%; /* Altura del 100% del contenedor padre */
+  overflow: hidden; /* Oculta el contenido que excede los límites del elemento */
+}
+
+.container .box:before, .container .box:after {
+  content: " "; /* Agrega contenido vacío al elemento */
+  position: absolute; /* Establece el posicionamiento absoluto */
+  left: 152px; /* Posición izquierda del elemento */
+  top: 50px; /* Posición superior del elemento */
+  background-color: #c08ee1; /* Color de fondo en formato hexadecimal */
+  transform: rotateX(52deg) rotateY(15deg) rotateZ(-38deg); /* Realiza una rotación tridimensional al elemento */
+  width: 300px; /* Ancho del elemento */
+  height: 285px; /* Altura del elemento */
+  -moz-transition: all 0.5s; /* Transición animada para propiedades en navegadores Firefox */
+  -o-transition: all 0.5s; /* Transición animada para propiedades en navegadores Opera */
+  -webkit-transition: all 0.5s; /* Transición animada para propiedades en navegadores WebKit (Chrome, Safari) */
+  transition: all 0.5s; /* Transición animada para propiedades */
+}
+
+.container .box:after {
+  background-color: #a56fcc; /* Color de fondo en formato hexadecimal */
+  top: -10px; /* Posición superior del elemento */
+  left: 80px; /* Posición izquierda del elemento */
+  width: 320px; /* Ancho del elemento */
+  height: 180px; /* Altura del elemento */
+}
+
+.container .container-forms {
+  position: relative; /* Establece el posicionamiento relativo */
+}
+
+.container .btn {
+  cursor: pointer; /* Establece el cursor como un puntero al pasar por encima */
+  text-align: center; /* Alinea el texto al centro horizontalmente */
+  margin: 0 auto; /* Establece márgenes automáticos a los lados izquierdo y derecho */
+  width: 75px; /* Ancho del elemento */
+  color: #fff7f8; /* Color del texto en formato hexadecimal */
+  background-color: #d6aeeb; /* Color de fondo en formato hexadecimal */
+  opacity: 1; /* Opacidad del elemento (totalmente opaco) */
+  -moz-transition: all 0.5s; /* Transición animada para propiedades en navegadores Firefox */
+  -o-transition: all 0.5s; /* Transición animada para propiedades en navegadores Opera */
+  -webkit-transition: all 0.5s; /* Transición animada para propiedades en navegadores WebKit (Chrome, Safari) */
+  transition: all 0.5s; /* Transición animada para propiedades */
+}
+
+.boton-registro {
+  cursor: pointer; /* Establece el cursor como un puntero al pasar por encima */
+  text-align: center; /* Alinea el texto al centro horizontalmente */
+  margin: 0 auto; /* Establece márgenes automáticos a los lados izquierdo y derecho */
+  width: 78px; /* Ancho del elemento */
+  color: #fff7f8; /* Color del texto en formato hexadecimal */
+  background-color: #d6aeeb; /* Color de fondo en formato hexadecimal */
+  opacity: 1; /* Opacidad del elemento (totalmente opaco) */
+  -moz-transition: all 0.5s; /* Transición animada para propiedades en navegadores Firefox */
+  -o-transition: all 0.5s; /* Transición animada para propiedades en navegadores Opera */
+  -webkit-transition: all 0.5s; /* Transición animada para propiedades en navegadores WebKit (Chrome, Safari) */
+  transition: all 0.5s; /* Transición animada para propiedades */
+}
+
+.boton-inicio-sesion {
+  cursor: pointer; /* Establece el cursor como un puntero al pasar por encima */
+  text-align: center; /* Alinea el texto al centro horizontalmente */
+  margin: 0 auto; /* Establece márgenes automáticos a los lados izquierdo y derecho */
+  width: 78px; /* Ancho del elemento */
+  color: #fff7f8; /* Color del texto en formato hexadecimal */
+  background-color: #d6aeeb; /* Color de fondo en formato hexadecimal */
+  opacity: 1; /* Opacidad del elemento (totalmente opaco) */
+  -moz-transition: all 0.5s; /* Transición animada para propiedades en navegadores Firefox */
+  -o-transition: all 0.5s; /* Transición animada para propiedades en navegadores Opera */
+  -webkit-transition: all 0.5s; /* Transición animada para propiedades en navegadores WebKit (Chrome, Safari) */
+  transition: all 0.5s; /* Transición animada para propiedades */
+}
+
+.container .btn:hover {
+  opacity: 0.7; /* Opacidad del elemento al pasar por encima (70% opaco) */
+}
+
+.container .btn, .container input {
+  padding: 10px 15px; /* Relleno interno del elemento (10px arriba/abajo, 15px izquierda/derecha) */
+}
+
+.container input {
+  margin: 0 auto 15px; /* Establece márgenes automáticos arriba/abajo y margen automático izquierda/derecha */
+  display: block; /* Hace que el elemento sea un bloque y ocupe toda la anchura disponible */
+  width: 220px; /* Ancho del elemento */
+  -moz-transition: all 0.3s; /* Transición animada para propiedades en navegadores Firefox */
+  -o-transition: all 0.3s; /* Transición animada para propiedades en navegadores Opera */
+  -webkit-transition: all 0.3s; /* Transición animada para propiedades en navegadores WebKit (Chrome, Safari) */
+  transition: all 0.3s; /* Transición animada para propiedades */
+}
+
+.container .container-forms .container-info {
+  text-align: left; /* Alinea el texto a la izquierda */
+  font-size: 0; /* Establece el tamaño de fuente en 0 (oculta el texto) */
+}
+
+.container .container-forms .container-info .info-item {
+  text-align: center; /* Alinea el texto al centro horizontalmente */
+  font-size: 16px; /* Tamaño de fuente del elemento */
+  width: 300px; /* Ancho del elemento */
+  height: 320px; /* Altura del elemento */
+  display: inline-block; /* Hace que el elemento se muestre como un bloque en línea */
+  vertical-align: top; /* Alinea el elemento en la parte superior de su contenedor */
+  color: #ffffff; /* Color del texto en formato hexadecimal */
+  opacity: 1; /* Opacidad del elemento (totalmente opaco) */
+  -moz-transition: all 0.3s; /* Transición animada para propiedades en navegadores Firefox */
+  -o-transition: all 0.3s; /* Transición animada para propiedades en navegadores Opera */
+  -webkit-transition: all 0.3s; /* Transición animada para propiedades en navegadores WebKit (Chrome, Safari) */
+  transition: all 0.3s; /* Transición animada para propiedades */
+}
+
+.container .container-forms .container-info .info-item p {
+  font-size: 20px; /* Tamaño de fuente del párrafo dentro del elemento */
+  margin: 20px; /* Márgenes internos del párrafo */
+}
+
+.container .container-forms .container-info .info-item .btn {
+  background-color: transparent; /* Color de fondo transparente */
+  border: 1px solid #fff; /* Borde del elemento de 1 píxel sólido en formato hexadecimal */
+}
+
+.container .container-forms .container-info .info-item .table-cell {
+  padding-right: 35px; /* Relleno derecho del elemento */
+}
+
+.container .container-forms .container-info .info-item:nth-child(2) .table-cell {
+  padding-left: 35px; /* Relleno izquierdo del elemento */
+  padding-right: 0; /* Elimina el relleno derecho del elemento */
+}
+
+.container .container-form {
+  overflow: hidden; /* Controla cómo se muestra el contenido que se desborda del elemento */
+  position: absolute; /* Establece la posición absoluta del elemento */
+  left: 30px; /* Distancia desde el borde izquierdo del elemento padre */
+  top: -30px; /* Distancia desde el borde superior del elemento padre */
+  width: 305px; /* Ancho del elemento */
+  height: 380px; /* Altura del elemento */
+  background-color: #fff; /* Color de fondo en formato hexadecimal */
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2); /* Sombra del elemento */
+  -moz-transition: all 0.5s; /* Transición animada para propiedades en navegadores Firefox */
+  -o-transition: all 0.5s; /* Transición animada para propiedades en navegadores Opera */
+  -webkit-transition: all 0.5s; /* Transición animada para propiedades en navegadores WebKit (Chrome, Safari) */
+  transition: all 0.5s; /* Transición animada para propiedades */
+}
+
+.container .container-form:before {
+  content: "✔"; /* Contenido del pseudo-elemento (::before) */
+  position: absolute; /* Establece la posición absoluta del pseudo-elemento */
+  left: 110px; /* Distancia desde el borde izquierdo del elemento padre */
+  top: 110px; /* Distancia desde el borde superior del elemento padre */
+  color: #5356ad; /* Color del texto en formato hexadecimal */
+  font-size: 130px; /* Tamaño de fuente del pseudo-elemento */
+  opacity: 0; /* Opacidad del pseudo-elemento (totalmente transparente) */
+  -moz-transition: all 0.5s; /* Transición animada para propiedades en navegadores Firefox */
+  -o-transition: all 0.5s; /* Transición animada para propiedades en navegadores Opera */
+  -webkit-transition: all 0.5s; /* Transición animada para propiedades en navegadores WebKit (Chrome, Safari) */
+  transition: all 0.5s; /* Transición animada para propiedades */
+}
+
+.container .container-form .btn {
+  position: relative; /* Establece la posición relativa del elemento */
+  box-shadow: 0 0 10px 1px #eed2ff; /* Sombra del elemento */
+  margin-top: 30px; /* Margen superior del elemento */
+}
+
+.container .form-item {
+  position: absolute; /* Establece la posición absoluta del elemento */
+  left: 0; /* Distancia desde el borde izquierdo del elemento padre */
+  top: 0; /* Distancia desde el borde superior del elemento padre */
+  width: 100%; /* Ancho del elemento */
+  height: 100%; /* Altura del elemento */
+  opacity: 1; /* Opacidad del elemento (totalmente opaco) */
+  -moz-transition: all 0.5s; /* Transición animada para propiedades en navegadores Firefox */
+  -o-transition: all 0.5s; /* Transición animada para propiedades en navegadores Opera */
+  -webkit-transition: all 0.5s; /* Transición animada para propiedades en navegadores WebKit (Chrome, Safari) */
+  transition: all 0.5s; /* Transición animada para propiedades */
+}
+
+.container .form-item.sign-up {
+  position: absolute; /* Establece la posición absoluta del elemento */
+  left: -100%; /* Mueve el elemento completamente hacia la izquierda */
+  opacity: 0; /* Opacidad del elemento (totalmente transparente) */
+}
+
+.container.log-in .box:before {
+  position: absolute; /* Establece la posición absoluta del pseudo-elemento */
+  left: 180px; /* Distancia desde el borde izquierdo del elemento padre */
+  top: 62px; /* Distancia desde el borde superior del elemento padre */
+  height: 265px; /* Altura del pseudo-elemento */
+}
+
+.container.log-in .box:after {
+  top: 22px; /* Distancia desde el borde superior del elemento padre */
+  left: 192px; /* Distancia desde el borde izquierdo del elemento padre */
+  width: 324px; /* Ancho del pseudo-elemento (::after) */
+  height: 220px; /* Altura del pseudo-elemento (::after) */
+}
+
+.container.log-in .container-form {
+  left: 265px; /* Distancia desde el borde izquierdo del elemento padre */
+}
+
+.container.log-in .container-form .form-item.sign-up {
+  left: 0; /* Vuelve a la posición original del elemento */
+  opacity: 1; /* Opacidad del elemento (totalmente opaco) */
+}
+
+.container.log-in .container-form .form-item.log-in {
+  left: -100%; /* Mueve el elemento completamente hacia la izquierda */
+  opacity: 0; /* Opacidad del elemento (totalmente transparente) */
+}
+
+.container.active {
+  width: 260px; /* Ancho del elemento */
+  height: 140px; /* Altura del elemento */
+  margin-top: -70px; /* Margen superior negativo para centrar verticalmente */
+}
+
+.container.active .container-form {
+  left: 30px; /* Distancia desde el borde izquierdo del elemento padre */
+  width: 200px; /* Ancho del elemento */
+  height: 200px; /* Altura del elemento */
+}
+
+.container.active .container-form:before {
+  content: "✔"; /* Contenido del pseudo-elemento (::before) */
+  position: absolute; /* Establece la posición absoluta del pseudo-elemento */
+  left: 51px; /* Distancia desde el borde izquierdo del elemento padre */
+  top: 10px; /* Distancia desde el borde superior del elemento padre */
+  color: #5356ad; /* Color del texto en formato hexadecimal */
+  font-size: 130px; /* Tamaño de fuente del pseudo-elemento */
+  opacity: 1; /* Opacidad del pseudo-elemento (totalmente opaco) */
+}
+
+.container.active input, .container.active .btn, .container.active .info-item {
+  display: none; /* Oculta los elementos del formulario */
+  opacity: 0; /* Opacidad de los elementos (totalmente transparentes) */
+  padding: 0px; /* Elimina el relleno de los elementos */
+  margin: 0 auto; /* Centra horizontalmente los elementos */
+  height: 0; /* Altura de los elementos (0) */
+}
+
+.container.active .form-item {
+  height: 100%; /* Altura del elemento (100%) */
+}
+
+.container.active .container-forms .container-info .info-item {
+  height: 0%; /* Altura del elemento (0%) */
+  opacity: 0; /* Opacidad del elemento (totalmente transparente) */
+}
+
+.rabbit {
+  width: 50px; /* Ancho del elemento */
+  height: 50px; /* Altura del elemento */
+  position: absolute; /* Establece la posición absoluta del elemento */
+  bottom: 20px; /* Distancia desde el borde inferior del elemento padre */
+  right: 20px; /* Distancia desde el borde derecho del elemento padre */
+  z-index: 3; /* Índice de apilamiento del elemento */
+  fill: #d6aeeb; /* Color de relleno del elemento en formato hexadecimal */
+}
