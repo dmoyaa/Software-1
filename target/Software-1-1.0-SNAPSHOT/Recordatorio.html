@@ -1,92 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Recordatorios | Codex</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,600" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-  <link rel="stylesheet" href="./record.css">
-  <link rel="stylesheet" href="./recordatorio1.css">
-  
+    <meta charset="UTF-8">
+    <title>Recordatorios | Codex</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,600" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="./record.css">
+    <link rel="stylesheet" href="./recordatorio1.css">
+
 </head>
 <body>
 
 <div class="container">
-   <section id="formHolder">
-      <div class="row">
-         <!-- Logotipo y encabezado -->
-         <div class="col-sm-6 brand">
-            <a href="inicio.html" class="logo">Inicio <span>.</span></a>
-            <div class="heading">
-               <p>Recordatorio</p>
-               <p></p>
-               <p>Pago Proveedores,</p>
-               <p>Existencia de productos </p>
-               <p>y</p>
-               <p>Cobros pendientes</p>
-            </div>
-            <!-- Recordatorios -->
-            <div id="container">
-                <button type="button" onclick="toggleActivity(event, 'container')">
-                    <section class="activity">
-                        <div class="item">
-                            <p>Recordatorio1.</p>
-                        </div>
-                        <div class="item">
-                            <p>Recordatorio2.</p>
-                        </div>
-                        <div class="item">
-                            <p>Recordatorio3.</p>
-                        </div>
-                    </section>
-                    <span class="buttonText">Pago Proveedores</span>
-                </button>
-            </div>
-            <div id="container2">
-                <button type="button" onclick="toggleActivity(event, 'container2')">
-                    <section class="activity">
-                        <div class="item">
-                            <p>Recordatorio1.</p>
-                        </div>
-                        <div class="item">
-                            <p>Recordatorio2.</p>
-                        </div>
-                        <div class="item">
-                            <p>Recordatorio3.</p>
-                        </div>
-                    </section>
-                    <span class="buttonText">Cobros Pendientes</span>
-                </button>
-            </div>
-            <div id="container3">
-                <button type="button" onclick="toggleActivity(event, 'container3')">
-                    <section class="activity">
-                        <div class="item">
-                            <p>Recordatorio1.</p>
-                        </div>
-                        <div class="item">
-                            <p>Recordatorio2.</p>
-                        </div>
-                        <div class="item">
-                            <p>Recordatorio3.</p>
-                        </div>
-                    </section>
-                    <span class="buttonText">Falta de Existencias</span>
-                </button>
+    <section id="formHolder">
+        <div class="row">
+            <!-- Logotipo y encabezado -->
+            <div class="col-sm-6 brand">
+                <a href="inicio.html" class="logo">Inicio <span>.</span></a>
+                <div class="heading">
+                    <p>Recordatorio</p>
+                    <p></p>
+                    <p>Pago Proveedores,</p>
+                    <p>Existencia de productos </p>
+                    <p>y</p>
+                    <p>Cobros pendientes</p>
+                </div>
+                <!-- Recordatorios -->
+                <div id="container">
+                    <button type="button" onclick="toggleActivity(event, 'container')">
+                        <section class="activity">
+                            <div class="item">
+                                <input type="checkbox" id="checkbox1-proveedores" onclick="event.stopPropagation()">
+                                <label for="checkbox1">Recordatorio1.</label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" id="checkbox2-proveedores" onclick="event.stopPropagation()">
+                                <label for="checkbox2">Recordatorio2.</label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" id="checkbox3-proveedores" onclick="event.stopPropagation()">
+                                <label for="checkbox3">Recordatorio3.</label>
+                            </div>
+                        </section>
+                        <span class="buttonText">Pago Proveedores</span>
+                    </button>
+                </div>
+
+
+                <div id="container2">
+                    <button type="button" onclick="toggleActivity(event, 'container2')">
+                        <section class="activity">
+                            <div class="item">
+                                <input type="checkbox" id="checkbox1-cobros" onclick="event.stopPropagation()">
+                                <label for="checkbox1">Recordatorio1.</label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" id="checkbox2-cobros" onclick="event.stopPropagation()">
+                                <label for="checkbox2">Recordatorio2.</label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" id="checkbox3-cobros" onclick="event.stopPropagation()">
+                                <label for="checkbox3">Recordatorio3.</label>
+                            </div>
+                        </section>
+                        <span class="buttonText">Cobros Pendientes</span>
+                    </button>
+                </div>
+                <div id="container3">
+                    <button type="button" onclick="toggleActivity(event, 'container3')">
+                        <section class="activity">
+                            <div class="item">
+                                <input type="checkbox" id="checkbox1" onclick="event.stopPropagation()">
+                                <label for="checkbox1">Recordatorio1.</label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" id="checkbox2" onclick="event.stopPropagation()">
+                                <label for="checkbox2">Recordatorio2.</label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" id="checkbox3" onclick="event.stopPropagation()">
+                                <label for="checkbox3">Recordatorio3.</label>
+                            </div>
+                        </section>
+                        <span class="buttonText">Falta de Existencias</span>
+                    </button>
+                </div>
+
+                <!-- Función para presionar el checkbox sin que se recoja el botón -->
+                <script>
+                    // Definición de la función toggleActivity
+                    function toggleActivity(event, containerId) {
+                        event.stopPropagation(); // Evitar que el evento se propague hacia arriba
+
+                        // Obtener referencia al elemento contenedor usando el containerId
+                        var container = document.getElementById(containerId);
+
+                        // Alternar la clase "active" en el elemento contenedor
+                        container.classList.toggle("active");
+                    }
+                </script>
             </div>
         </div>
-   </section>
+    </section>
 </div>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 
 <script>
-function toggleActivity(event, containerId) {
-  const container = document.getElementById(containerId);
-  container.classList.add("clicked");
-  container.classList.toggle("active");
-}
+    function toggleActivity(event, containerId) {
+        const container = document.getElementById(containerId);
+        container.classList.add("clicked");
+        container.classList.toggle("active");
+    }
 </script>
 
 </body>
