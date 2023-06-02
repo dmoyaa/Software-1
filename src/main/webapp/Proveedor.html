@@ -19,13 +19,14 @@
          <div class="col-sm-6 brand">
             <a href="inicio.html" class="logo">Inicio <span>.</span></a>
             <div class="heading">
-               <p>Consultar,</p>
-               <p>Actualizar,</p>
-               <p>Registrar </p>
+               
+               <p onclick="showForm('formConsultar')">Consultar,</p>
+               <p onclick="showForm('formActualizar')">Actualizar,</p>
+               <p onclick="showForm('formRegistrar')">Registrar</p>
                <p>y</p>
-               <p>Eliminar</p>
+               <p onclick="showForm('formEliminar')">Eliminar</p>
                <p>Proveedor</p>
-            </div>
+            </div>   
 
             <!-- Mensaje de éxito -->
             <div class="success-msg">
@@ -39,28 +40,33 @@
             <!-- Formulario de actualizar -->
             <div class="form-peice" id="formActualizar">
                <form class="act-form" action="actualizar" method="post">
+
+                  <div class="form-group8">
+                     <select name="lista" id="lista-proveedores2" class="select" onclick="cargarInformacion()" >
+                        <option value="option1">Proveedor 1</option>
+                        <option value="option2">Proveedor 2</option>
+                        <option value="option3">Proveedor 3</option>
+                        <option value="option4">Proveedor 4</option>
+                     </select>
+                  </div>
                   
                   <div class="form-group">
-                     <label for="name">NOMBRE</label>
-                     <input type="text" name="name" id="name" class="name">
+                     <input type="text" name="name" id="name_actualizar" value="NOMBRE" class="name">
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group">
-                     <label for="address">DIRECCIÓN</label>
-                     <input type="text" name="address" id="address" class="address">
+                     <input type="text" name="address" id="address_actualizar" value="DIRECCIÓN" class="address">
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group">
-                     <label for="email">CORREO</label>
-                     <input type="email" name="email" id="email" class="email">
+                     <input type="email" name="email" id="email_actualizar" value="EMAIL" class="email">
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group">
-                     <label for="phone">TELÉFONO</label>
-                     <input type="text" name="phone" id="phone" class="phone">
+                     <input type="text" name="phone" id="phone_actualizar" value="TELÉFONO" class="phone">
                      <span class="error"></span>
                   </div>
                   
@@ -77,31 +83,31 @@
                   
                   <div class="form-group">
                      <label for="nit">NIT</label>
-                     <input type="text" name="nit" id="nit" class="nit">
+                     <input type="text" name="nit" id="nit" class="nit" required>
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group">
                      <label for="name">NOMBRE</label>
-                     <input type="text" name="name" id="name" class="name">
+                     <input type="text" name="name" id="name" class="name" required>
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group">
                      <label for="address">DIRECCIÓN</label>
-                     <input type="text" name="address" id="address" class="address">
+                     <input type="text" name="address" id="address" class="address" required>
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group">
                      <label for="email">CORREO</label>
-                     <input type="email" name="email" id="email" class="email">
+                     <input type="email" name="email" id="email" class="email" required>
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group">
                      <label for="phone">TELÉFONO</label>
-                     <input type="text" name="phone" id="phone" class="phone">
+                     <input type="text" name="phone" id="phone" class="phone" required>
                      <span class="error"></span>
                   </div>
                   
@@ -121,7 +127,7 @@
                   </div>
 
                   <div class="select-container2">
-                     <select name="formapago" id="fpago" class="select">
+                     <select name="eliminar" id="lista-proveedores1" class="select">
                         <option value="option1">Proveedor1</option>
                         <option value="option2">Proveedor2</option>
                         <option value="option3">Proveedor3</option>
@@ -146,7 +152,7 @@
                   </div>
 
                   <div class="select-container2">
-                     <select name="formapago" id="fpago" class="select">
+                     <select name="formapago" id="lista-proveedores" class="select">
                         <option value="option1">Proveedor1</option>
                         <option value="option2">Proveedor2</option>
                         <option value="option3">Proveedor3</option>
@@ -176,6 +182,7 @@
 </div>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src="proveedores.js"></script>
 <script>
    function showForm(formId) {
       // Oculta todos los formularios
