@@ -1,12 +1,19 @@
-.rabbit {
-    width: 50px; /* Ancho del elemento */
-    height: 50px; /* Altura del elemento */
-    position: absolute; /* Establece la posición absoluta del elemento */
-    bottom: 20px; /* Distancia desde el borde inferior del elemento padre */
-    right: 20px; /* Distancia desde el borde derecho del elemento padre */
-    z-index: 3; /* Índice de apilamiento del elemento */
-    fill: #d6aeeb; /* Color de relleno del elemento en formato hexadecimal */
-  }
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.brand a.logo {
+
+    color: #d6aeeb;/* Color del texto del enlace */
+    font-size: 20px;/* Tamaño de fuente de 20 píxeles */
+    font-weight: 700;/* Peso de fuente en negrita (700) */
+    text-decoration: none;/* Sin decoración de texto */
+    line-height: 1em;/* Altura de línea de 1em */
+}
+
+/* Estilos para el elemento span dentro del enlace de logo */
   
 
 body {

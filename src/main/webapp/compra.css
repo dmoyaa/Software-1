@@ -215,11 +215,11 @@ body {
     position: relative; /* Posición relativa */
   }
 
-  .form form .form-group {
-    top: -50px; /* Ajusta la posición vertical hacia arriba */
-    position: relative; /* Posición relativa */
-    width: 200px;
-  }
+.form form .form-group {
+  top: -40px; /* Ajusta la posición vertical hacia arriba */
+  position: relative; /* Posición relativa */
+  width: 200px;
+}
 
   .form form .form-group2 {
   
