@@ -60,5 +60,40 @@ public class UsuarioService {
         }
     }
 
+    public UsuarioDto crearUsuario(String username, String password, String rol){
+        String loginrs = null;
+        UsuarioDto usuario = null;
+        try {
+            conexion.conectar();
+            Connection conn = conexion.getConnection();
+            String consulta = "Select * from usuario where login = ?";
+            prestmt =conn.prepareStatement(consulta);
+            prestmt.setString(1,username);
+            ResultSet rs=prestmt.executeQuery();
+
+
+            while (rs.next()){
+                loginrs =rs.getString("login");
+            }
+
+            if (loginrs  == null){
+                int trueRol = Integer.parseInt(rol);
+                String insert = "Insert into usuario (login, pass, fecha_creacion, id_rol) VALUES (username, password, now(), trueRol)";
+                prestmt =conn.prepareStatement(insert);
+                usuario = new UsuarioDto(username, password, rol);
+
+            } else{
+                System.out.println("El usuario ya existe");
+            }
+            rs.close();
+            prestmt.close();
+            conn.close();
+            conexion.desconectar();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return usuario;
+    }
 
 }

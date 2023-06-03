@@ -8,6 +8,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+
 @Path("/users")
 
 
@@ -38,6 +39,29 @@ public class UsuarioResource {
             response = Response.status(404).entity(new ExceptionMessage(404,"ERROR")).build();
         }
 
+        return response;
+    }
+
+    @POST
+    @Path("/{register}")
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.APPLICATION_JSON)
+
+    public Response registroUsuario(@PathParam ("register") String username, @FormParam("Password") String password, @FormParam("Rol") String rol) {
+        Response response = null;
+        usuarioService = new UsuarioService();
+        try{
+            UsuarioDto user = usuarioService.crearUsuario(username, password, rol);
+
+            if(user!=null){
+                response= Response.ok().entity(new ExceptionMessage(200, "El usuario ha sido registrado exitosamente")).build();
+            }else {
+                response = Response.status(404).entity(new ExceptionMessage(404, "El usuario ya existe")).build();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            response = Response.status(404).entity(new ExceptionMessage(404, "Error con el nuevo usuario")).build();
+        }
         return response;
     }
 }

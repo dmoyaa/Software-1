@@ -30,22 +30,18 @@ async function verificarIngreso() {
       "Content-Type": "APPLICATION_JSON",
     }
 
-
-
-
   });
   let result =await response.json();
   console.log(result);
 
-
-
   if(result.password== document.getElementById("password-form").value){
     alert("Bienvenido a el sistema: "+username);
-    window.location.href="http://localhost:8080/software-1.0-SNAPSHOT/inicio.html";
+    window.location.href="http://localhost:8080/Software-1-1.0-SNAPSHOT/inicio.html";
   }else{
     alert("Usuario no encontrado o contraseña incorrecta");
-
+    window.location.href="http://localhost:8080/Software-1-1.0-SNAPSHOT/inicio.html";
   }
+
 
 
 }
