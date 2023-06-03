@@ -40,6 +40,8 @@ public class ProveedorService {
                 proveedor = new ProveedorDto(nit,rsNombre,rsDireccion,rsCorreo,rsTelefono);
             }
 
+            System.out.println(proveedor);
+
             rs.close();
             prestmt.close();
             conn.close();
@@ -91,5 +93,74 @@ public class ProveedorService {
             conexion.desconectar();
         }
         return lista;
+    }
+
+    public boolean actualizarProveedor(ProveedorDto proveedor) {
+        boolean respuesta=true;
+        try{
+            String sql = "UPDATE proveedor set nombre = ?, direccion = ?, correo = ?, telefono= ? where nit_proveedor = ?";
+            conexion.conectar();
+            Connection conn = conexion.getConnection();
+            prestmt = conn.prepareStatement(sql);
+            prestmt.setString(1,proveedor.getNombre());
+            prestmt.setString(2,proveedor.getDireccion());
+            prestmt.setString(3,proveedor.getCorreo());
+            prestmt.setString(4,proveedor.getTelefono());
+            prestmt.setString(5,proveedor.getNit());
+            prestmt.executeUpdate();
+            respuesta = true;
+            prestmt.close();
+            conn.close();
+            conexion.desconectar();
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            respuesta = false;
+        }
+        return respuesta;
+    }
+
+    public boolean eliminarProveedor(String nit){
+        boolean respuesta;
+        try{
+            String sql = "update proveedor set estado = 'I'";
+            conexion.conectar();
+            Connection conn = conexion.getConnection();
+            prestmt = conn.prepareStatement(sql);
+            prestmt.executeUpdate();
+            respuesta=true;
+            prestmt.close();
+            conn.close();
+            conexion.desconectar();
+        }catch (SQLException e) {
+            e.printStackTrace();
+            respuesta = false;
+        }
+        return respuesta;
+    }
+
+    public boolean agregarProveedor(ProveedorDto proveedor) {
+        boolean respuesta;
+        try{
+            String sql = "INSERT INTO proveedor values (?,?,?,?,?,?)";
+            conexion.conectar();
+            Connection conn = conexion.getConnection();
+            prestmt = conn.prepareStatement(sql);
+            prestmt.setString(1,proveedor.getNit());
+            prestmt.setString(2,proveedor.getNombre());
+            prestmt.setString(3,proveedor.getDireccion());
+            prestmt.setString(4,proveedor.getCorreo());
+            prestmt.setString(5,proveedor.getTelefono());
+            prestmt.setString(6,"A");
+            prestmt.executeUpdate();
+            respuesta = true;
+            prestmt.close();
+            conn.close();
+            conexion.desconectar();
+        }catch (Exception e){
+            e.printStackTrace();
+            respuesta = false;
+        }
+        return respuesta;
     }
 }

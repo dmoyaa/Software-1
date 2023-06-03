@@ -42,12 +42,9 @@
                   
 
                   <div class="form-group">
-                     <select name="formactulizar" id="actualizar" class="select" onchange="actualizarDatosCliente()">
-                        <option value="option1">Cliente1</option>
-                        <option value="option2">Cliente2</option>
-                        <option value="option3">Cliente3</option>
-                        <option value="option4">Cliente4</option>
-                     </select>
+                     <label for="name">Nombre</label>
+                     <input type="text" name="name" id="name" class="name">
+                     <span class="error"></span>
                   </div>
 
                   <div class="form-group">
@@ -131,7 +128,7 @@
                   </div>
 
                   <div class="select-container2">
-                     <select name="formeliminar" id="eliminar" class="select">
+                     <select name="formapago" id="fpago" class="select">
                         <option value="option1">Cliente1</option>
                         <option value="option2">Cliente2</option>
                         <option value="option3">Cliente3</option>
@@ -183,10 +180,45 @@
    </section>
 </div>
 
-<script src='./clientes.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'>
-</script>
 
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script>
+   function showForm(formId) {
+      // Oculta todos los formularios
+      var forms = document.getElementsByClassName("form-peice");
+      for (var i = 0; i < forms.length; i++) {
+         forms[i].style.display = "none";
+      }
+
+      // Muestra el formulario seleccionado
+      var form = document.getElementById(formId);
+      form.style.display = "block";
+   }
+
+   function cargarClientes() {
+      var dropdown = document.getElementById('consultas');
+      console.log("--------------Está haciendo el metodo cargar clientes ------------");
+      // Reali zar la petición AJAX para obtener los clientes
+      fetch(`.s/api/clients`)
+              .then(response => response.json())
+              .then(data => {
+                 // Limpiar el dropdown
+                 dropdown.innerHTML = '';
+
+                 // Agregar una opción para cada cliente en la respuesta
+                 data.forEach(cliente => {
+                    var option = document.createElement('option');
+                    option.value = cliente.cedula;
+                    option.text = cliente.nombre;
+                    dropdown.appendChild(option);
+                 });
+              });
+   }
+
+   // Cargar los clientes cuando se cargue la página
+   window.onload = cargarClientes;
+</script>
 
 </body>
 </html>

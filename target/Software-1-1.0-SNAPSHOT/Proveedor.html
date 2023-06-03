@@ -39,7 +39,7 @@
 
             <!-- Formulario de actualizar -->
             <div class="form-peice" id="formActualizar">
-               <form class="act-form" action="actualizar" method="post">
+               <form class="act-form" action="actualizar" method="PUT" onsubmit="actualizar()" >
 
                   <div class="form-group8">
                      <select name="lista" id="lista-proveedores2" class="select" onclick="cargarInformacion()" >
@@ -51,22 +51,22 @@
                   </div>
                   
                   <div class="form-group">
-                     <input type="text" name="name" id="name_actualizar" value="NOMBRE" class="name">
+                     <input type="text" name="name" id="name_actualizar" placeholder="NOMBRE" class="name" required>
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group">
-                     <input type="text" name="address" id="address_actualizar" value="DIRECCIÓN" class="address">
+                     <input type="text" name="address" id="address_actualizar" placeholder="DIRECCIÓN" class="address" required>
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group">
-                     <input type="email" name="email" id="email_actualizar" value="EMAIL" class="email">
+                     <input type="email" name="email" id="email_actualizar" placeholder="EMAIL" class="email" required>
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group">
-                     <input type="text" name="phone" id="phone_actualizar" value="TELÉFONO" class="phone">
+                     <input type="text" name="phone" id="phone_actualizar" placeholder="TELÉFONO" class="phone" required>
                      <span class="error"></span>
                   </div>
                   
@@ -79,35 +79,30 @@
 
             <!-- Formulario de registrar -->
             <div class="form-peice" id="formRegistrar">
-               <form class="signup-form" action="registrar" method="post">
+               <form class="signup-form" id="form-registrar" onsubmit="insertarProveedor()" action="registrar">
                   
                   <div class="form-group">
-                     <label for="nit">NIT</label>
-                     <input type="text" name="nit" id="nit" class="nit" required>
+                     <input type="text" name="nit" placeholder="NIT" id="nit" class="nit" required>
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group">
-                     <label for="name">NOMBRE</label>
-                     <input type="text" name="name" id="name" class="name" required>
+                     <input type="text" name="name" placeholder="NOMBRE" id="name" class="name" required>
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group">
-                     <label for="address">DIRECCIÓN</label>
-                     <input type="text" name="address" id="address" class="address" required>
+                     <input type="text" name="address" placeholder="DIRECCIÓN" id="address" class="address" required>
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group">
-                     <label for="email">CORREO</label>
-                     <input type="email" name="email" id="email" class="email" required>
+                     <input type="email" name="email" placeholder="EMAIL" id="email" class="email" required>
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group">
-                     <label for="phone">TELÉFONO</label>
-                     <input type="text" name="phone" id="phone" class="phone" required>
+                     <input type="text" name="phone" placeholder="TELÉFONO" id="phone" class="phone" required>
                      <span class="error"></span>
                   </div>
                   
@@ -120,7 +115,7 @@
 
             <!-- Formulario de eliminar -->
             <div class="form-peice" id="formEliminar">
-               <form class="elim-form" action="eliminar" method="post">
+               <form class="elim-form"  method="PUT">
                   
                   <div class="form-group8">
                      <label for="name">NOMBRE PROVEEDOR</label>
@@ -128,7 +123,7 @@
 
                   <div class="select-container2">
                      <select name="eliminar" id="lista-proveedores1" class="select">
-                        <option value="option1">Proveedor1</option>
+                        <option value="option1" >Proveedor1</option>
                         <option value="option2">Proveedor2</option>
                         <option value="option3">Proveedor3</option>
                         <option value="option4">Proveedor4</option>
@@ -137,7 +132,7 @@
                   </div>
                   
                   <div class="CTA">
-                     <input type="submit" value="Eliminar">
+                     <input type="submit" value="Eliminar" onclick="eliminarProveedor()">
                      <a href="#" class="switch" onclick="showForm('formConsultar')">Consultar</a>
                   </div>
                </form>
@@ -145,7 +140,7 @@
 
             <!-- Formulario de consultar -->
             <div class="form-peice" id="formConsultar">
-               <form class="cons-form" action="consultar" method="post">
+               <form class="cons-form" action="consultar" method="GET">
                   
                   <div class="form-group8">
                      <label for="name">NOMBRE PROVEEDOR</label>
@@ -162,14 +157,16 @@
                   </div>
                   
                   <div class="CTA">
-                     <input type="submit" value="Consultar">
+                     <input type="submit" onclick="consultarProveedor()" value="Consultar">
                      <a href="#" class="switch" onclick="showForm('formActualizar')">Actualizar</a>
                   </div>
 
                   <ul class="list">
-                     <li>Opción 1</li>
-                     <li>Opción 2</li>
-                     <li>Opción 3</li>
+                     <li id="nit_lista">NIT: </li>
+                     <li id="nombre_list">NOMBRE: </li>
+                     <li id="direccion_list">DIRECCION: </li>
+                     <li id="correo_list">CORREO: </li>
+                     <li id="telefono_list">TELÉFONO: </li>
                   </ul>
                   
                </form>
@@ -184,6 +181,7 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 <script src="proveedores.js"></script>
 <script>
+   cargarProveedores();
    function showForm(formId) {
       // Oculta todos los formularios
       var forms = document.getElementsByClassName("form-peice");
