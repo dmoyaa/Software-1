@@ -1,224 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Cliente | Codex</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,600" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-  <link rel="stylesheet" href="./clientes.css">
+    <meta charset="UTF-8">
+    <title>Cliente | Codex</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,600" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="./clientes.css">
 </head>
 <body>
 
 <div class="container">
-   <section id="formHolder">
+    <section id="formHolder">
 
-      <div class="row">
+        <div class="row">
 
-         <!-- Logotipo y encabezado -->
-         <div class="col-sm-6 brand">
-            <a href="inicio.html" class="logo">Inicio <span>.</span></a>
-            <div class="heading">
-               <p>Consultar,</p>
-               <p>Actualizar,</p>
-               <p>Registrar </p>
-               <p>y</p>
-               <p>Eliminar</p>
-               <p>Cliente</p>
+            <!-- Logotipo y encabezado -->
+            <div class="col-sm-6 brand">
+                <a href="inicio.html" class="logo">Inicio <span>.</span></a>
+                <div class="heading">
+                    <p onclick="showForm('formConsultar')">Consultar,</p>
+                    <p onclick="showForm('formActualizar')">Actualizar,</p>
+                    <p onclick="showForm('formRegistrar')">Registrar</p>
+                    <p>y</p>
+                    <p onclick="showForm('formEliminar')">Eliminar</p>
+                    <p>Cliente</p>
+                </div>
+
+                <!-- Mensaje de éxito -->
+                <div class="success-msg">
+                    <p>¡Excelente! cliente registrado.</p>
+                </div>
             </div>
 
-            <!-- Mensaje de éxito -->
-            <div class="success-msg">
-               <p>¡Excelente! Proveedor registrado.</p>
+
+            <div class="col-sm-6 form">
+
+                <!-- Formulario de actualizar -->
+                <div class="form-peice" id="formActualizar">
+                    <form class="act-form" action="actualizar" method="PUT" onsubmit="actualizarConsultar()">
+
+
+                        <div class="form-group">
+                            <select name="formactulizar" id="actualizar" class="select"
+                                    onclick="actualizarDatosCliente()">
+                                <option value="option1">Cliente1</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="name" id="namea" value="Nombre" class="name" required="required">
+                            <span class="error"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="lastname" id="lastnamea" value="APELLIDO" class="lastname"
+                                   required="required">
+                            <span class="error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="address" id="addressa" value="Dirección" class="address"
+                                   required="required">
+                            <span class="error"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="phone" id="phonea" value="Telefono" class="phone"
+                                   required="required">
+                            <span class="error"></span>
+                        </div>
+
+                        <div class="CTA">
+                            <input type="submit" value="Actualizar">
+                            <a href="#" class="switch" onclick="showForm('formRegistrar')">Registrar</a>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Formulario de registrar -->
+                <
+                <div class="form-peice" id="formRegistrar">
+                    <form class="signup-form" id="form-registrar" onsubmit="ingresar()" action="registrar" method="POST">
+
+                        <div class="form-group">
+                            <input type="text" name="cedula" placeholder="CEDULA" id="cedula" class="cedula" required>
+                            <span class="error"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="NOMBRE" id="name" class="name" required>
+                            <span class="error"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="lastname" placeholder="APELLIDO" id="lastname" class="lastname"
+                                   required>
+                            <span class="error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="address" placeholder="DIRECCIÓN" id="address" class="address"
+                                   required>
+                            <span class="error"></span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <input type="text" name="phone" placeholder="TELÉFONO" id="phone" class="phone" required>
+                            <span class="error"></span>
+                        </div>
+
+                        <div class="CTA">
+                            <input type="submit" value="Registrar" id="submit">
+                            <a href="#" class="switch" onclick="showForm('formEliminar')">Eliminar</a>
+                        </div>
+                    </form>
+                </div>
+
+
+                <!-- Formulario de eliminar -->
+                <div class="form-peice" id="formEliminar">
+                    <form class="elim-form" action="eliminar" method="PUT" onsubmit="actualizarEliminar()">
+
+                        <div class="form-group8">
+                            <label for="namea">Nombre Cliente</label>
+                        </div>
+
+                        <div class="select-container2">
+                            <select name="formeliminar" id="eliminar" class="select">
+                                <option value="option1">Cliente1</option>
+                                <option value="option2">Cliente2</option>
+                                <option value="option3">Cliente3</option>
+                                <option value="option4">Cliente4</option>
+                            </select>
+                            <span class="error"></span>
+                        </div>
+
+                        <div class="CTA">
+                            <input type="submit" value="Eliminar">
+                            <a href="#" class="switch" onclick="showForm('formConsultar')">Consultar</a>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Formulario de consultar -->
+                <div class="form-peice" id="formConsultar">
+                    <form class="cons-form" action="consultar" method="post" >
+
+                        <div class="form-group8">
+                            <label for="namea">Nombre Cliente</label>
+                        </div>
+
+                        <div class="select-container2">
+                            <select name="formapago" id="consultas" class="select" onclick="actualizarDatosClienteConsulta()">
+                                <option value="">Seleccione un cliente</option>
+                                <option value="">vida hp</option>
+                            </select>
+                            <span class="error"></span>
+                        </div>
+                        <div  class="CTA">
+                        <ul class="list">
+                            <li id="namec"value="NOMBRE"></li>
+                            <li id="lastnamec"value="APELLIDO"></li>
+                            <li id="addressc"value="DIRECCION"></li>
+                            <li id="phonec"value="TELEFONO"></li>
+                        </ul>
+                        </div>
+                        <div class="CTA">
+                            <a href="#" class="switch" onclick="showForm('formActualizar')">Actualizar</a>
+                        </div>
+
+                    </form>
+                </div>
+
             </div>
-         </div>
+        </div>
 
-
-         <div class="col-sm-6 form">
-
-            <!-- Formulario de actualizar -->
-            <div class="form-peice" id="formActualizar">
-               <form class="act-form" action="actualizar" method="post">
-                  
-
-                  <div class="form-group">
-                     <label for="name">Nombre</label>
-                     <input type="text" name="name" id="name" class="name">
-                     <span class="error"></span>
-                  </div>
-
-                  <div class="form-group">
-                     <label for="address">Dirección</label>
-                     <input type="text" name="address" id="address" class="address">
-                     <span class="error"></span>
-                  </div>
-
-                  <div class="form-group">
-                     <label for="email">Correo</label>
-                     <input type="email" name="email" id="email" class="email">
-                     <span class="error"></span>
-                  </div>
-
-                  <div class="form-group">
-                     <label for="phone">Teléfono</label>
-                     <input type="text" name="phone" id="phone" class="phone">
-                     <span class="error"></span>
-                  </div>
-                  
-                  <div class="CTA">
-                     <input type="submit" value="Actualizar">
-                     <a href="#" class="switch" onclick="showForm('formRegistrar')">Registrar</a>
-                  </div>
-               </form>
-            </div>
-
-            <!-- Formulario de registrar -->
-            <div class="form-peice" id="formRegistrar">
-               <form class="signup-form" action="registrar" method="post">
-                  
-                  <div class="form-group">
-                     <label for="cedula">Cedula</label>
-                     <input type="text" name="cedula" id="cedula" class="cedula">
-                     <span class="error"></span>
-                  </div>
-
-                  <div class="form-group">
-                     <label for="name">Nombre</label>
-                     <input type="text" name="name" id="name" class="name">
-                     <span class="error"></span>
-                  </div>
-
-                  <div class="form-group">
-                     <label for="name">Apellido</label>
-                     <input type="text" name="name" id="last-name" class="name">
-                     <span class="error"></span>
-                  </div>
-
-                  <div class="form-group">
-                     <label for="address">Dirección</label>
-                     <input type="text" name="address" id="address" class="address">
-                     <span class="error"></span>
-                  </div>
-
-                  <div class="form-group">
-                     <label for="email">Correo</label>
-                     <input type="email" name="email" id="email" class="email">
-                     <span class="error"></span>
-                  </div>
-
-                  <div class="form-group">
-                     <label for="phone">Teléfono</label>
-                     <input type="text" name="phone" id="phone" class="phone">
-                     <span class="error"></span>
-                  </div>
-                  
-                  <div class="CTA">
-                     <input type="submit" value="Registrar" id="submit">
-                     <a href="#" class="switch" onclick="showForm('formEliminar')">Eliminar</a>
-                  </div>
-               </form>
-            </div>
-
-            <!-- Formulario de eliminar -->
-            <div class="form-peice" id="formEliminar">
-               <form class="elim-form" action="eliminar" method="post">
-                  
-                  <div class="form-group8">
-                     <label for="name">Nombre Cliente</label>
-                  </div>
-
-                  <div class="select-container2">
-                     <select name="formapago" id="fpago" class="select">
-                        <option value="option1">Cliente1</option>
-                        <option value="option2">Cliente2</option>
-                        <option value="option3">Cliente3</option>
-                        <option value="option4">Cliente4</option>
-                     </select>
-                     <span class="error"></span>
-                  </div>
-                  
-                  <div class="CTA">
-                     <input type="submit" value="Eliminar">
-                     <a href="#" class="switch" onclick="showForm('formConsultar')">Consultar</a>
-                  </div>
-               </form>
-            </div>
-
-            <!-- Formulario de consultar -->
-            <div class="form-peice" id="formConsultar">
-               <form class="cons-form" action="consultar" method="post">
-                  
-                <div class="form-group8">
-                    <label for="name">Nombre Cliente</label>
-                 </div>
-
-                 <div class="select-container2">
-                    <select name="formapago" id="consultas" class="select">
-                       <option value="">Seleccione un cliente</option>
-                       <option value="">vida hp</option>
-                    </select>
-                    <span class="error"></span>
-                 </div>
-
-                  <div class="CTA">
-                     <input type="submit" value="Consultar">
-                     <a href="#" class="switch" onclick="showForm('formActualizar')">Actualizar</a>
-                  </div>
-
-                  <ul class="list">
-                    <li>Opción 1</li>
-                    <li>Opción 2</li>
-                    <li>Opción 3</li>
-                 </ul>
-
-               </form>
-            </div>
-
-         </div>
-      </div>
-
-   </section>
+    </section>
 </div>
 
-
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-<script>
-   function showForm(formId) {
-      // Oculta todos los formularios
-      var forms = document.getElementsByClassName("form-peice");
-      for (var i = 0; i < forms.length; i++) {
-         forms[i].style.display = "none";
-      }
-
-      // Muestra el formulario seleccionado
-      var form = document.getElementById(formId);
-      form.style.display = "block";
-   }
-
-   function cargarClientes() {
-      var dropdown = document.getElementById('consultas');
-      console.log("--------------Está haciendo el metodo cargar clientes ------------");
-      // Reali zar la petición AJAX para obtener los clientes
-      fetch(`.s/api/clients`)
-              .then(response => response.json())
-              .then(data => {
-                 // Limpiar el dropdown
-                 dropdown.innerHTML = '';
-
-                 // Agregar una opción para cada cliente en la respuesta
-                 data.forEach(cliente => {
-                    var option = document.createElement('option');
-                    option.value = cliente.cedula;
-                    option.text = cliente.nombre;
-                    dropdown.appendChild(option);
-                 });
-              });
-   }
-
-   // Cargar los clientes cuando se cargue la página
-   window.onload = cargarClientes;
+<script src='./clientes.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'>
 </script>
+
 
 </body>
 </html>

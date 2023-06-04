@@ -33,7 +33,6 @@ public class Conexion {
     public void desconectar(){
         try {
             connection.close();
-            System.out.println("Conexión cerrada correctamente.");
         } catch (SQLException e) {
         System.out.println("Error al cerrar la conexión: " + e.getMessage());
     }

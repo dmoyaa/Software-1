@@ -45,5 +45,6 @@ async function verificarIngreso() {
   }else{
     alert("Usuario no encontrado o contraseña incorrecta");
 
+
   }
 }
