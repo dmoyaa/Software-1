@@ -12,6 +12,14 @@ public class ProductoDto {
     private String detalle;
 
     public ProductoDto(int id_productors, String nombrers, int stockMinrs, int stockrs, String nit_proveedorrs, double precio_ventars, double precio_comprars, String detallers) {
+        this.id_producto= id_productors;
+        this.nombre = nombrers;
+        this.stockMin = stockMinrs;
+        this.stock = stockrs;
+        this.nit_proveedor = nit_proveedorrs;
+        this.precio_venta = precio_ventars;
+        this.precio_compra = precio_comprars;
+        this.detalle = detallers;
     }
 
     public String getNombre() {

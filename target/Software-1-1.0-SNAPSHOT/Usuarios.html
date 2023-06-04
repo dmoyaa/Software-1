@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Usuario | Codex</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,600" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="./usuarios.css">
+</head>
+<body>
+
+<div class="container">
+   <section id="formHolder">
+
+      <div class="row">
+
+         <!-- Logotipo y encabezado -->
+         <div class="col-sm-6 brand">
+            <a href="inicio.html" class="logo">Inicio <span>.</span></a>
+            <div class="heading">
+               <p onclick="showForm('formConsultar')">Consultar,</p>
+               <p onclick="showForm('formActualizar')">Actualizar</p>
+               <p>y</p>
+               <p onclick="showForm('formEliminar')">Eliminar</p>
+               <p>Usuarios</p>
+            </div>
+
+         </div>
+
+
+         <div class="col-sm-6 form">
+
+            <!-- Formulario de actualizar -->
+            <div class="form-peice" id="formActualizar">
+               <form class="act-form" action="actualizar" method="PUT" onsubmit="actualizar()">
+        
+                <div class="form-group8">
+                    <select name="formapago" id="lista-actualizar" class="select">
+                        <option value="option1">Usuario1</option>
+                        <option value="option2">Usuario2</option>
+                        <option value="option3">Usuario3</option>
+                        <option value="option4">Usuario4</option>
+                    </select>
+                    <label for="name">NOMBRE USUARIO</label>
+                 </div>
+
+                 <div class="select-container">
+
+                    <span class="error"></span>
+                 </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">CONTRASEÑA</label>
+                    <input type="password" name="loginPassword" id="loginPassword" required>
+                 </div>
+                 
+                  <div class="CTA">
+                     <input type="submit" value="Actualizar">
+                     <a href="#" class="switch" onclick="showForm('formEliminar')">Eliminar</a>
+                  </div>
+               </form>
+            </div>
+
+
+            <!-- Formulario de eliminar -->
+            <div class="form-peice" id="formEliminar">
+               <form class="elim-form" action="eliminar" onsubmit="eliminarUsuario()" method="post">
+                  
+                <div class="form-group8">
+                    <label for="name">NOMBRE USUARIO</label>
+                 </div>
+
+                 <div class="select-container2">
+                    <select name="formapago" id="lista-eliminar" class="select">
+                       <option value="option1">Usuario1</option>
+                       <option value="option2">Usuario2</option>
+                       <option value="option3">Usuario3</option>
+                       <option value="option4">Usuario4</option>
+                    </select>
+                    <span class="error"></span>
+                 </div>
+                  
+                  <div class="CTA">
+                     <input type="submit" value="Eliminar">
+                     <a href="#" class="switch" onclick="showForm('formConsultar')">Consultar</a>
+                  </div>
+               </form>
+            </div>
+
+            <!-- Formulario de consultar -->
+            <div class="form-peice" id="formConsultar">
+               <form class="cons-form" action="consultar" onsubmit="consultarUsuario()" method="GET">
+                  
+                  <div class="form-group8">
+                     <label for="name">NOMBRE USUARIO</label>
+                  </div>
+
+                  <div class="select-container2">
+                     <select name="formapago" id="lista-consultar" class="select">
+                        <option value="option1">Usuario1</option>
+                        <option value="option2">Usuario2</option>
+                        <option value="option3">Usuario3</option>
+                        <option value="option4">Usuario4</option>
+                     </select>
+                     <span class="error"></span>
+                  </div>
+                  
+                  <div class="CTA">
+                     <input type="submit" value="Consultar">
+                     <a href="#" class="switch" onclick="showForm('formActualizar')">Actualizar</a>
+                  </div>
+
+                  <ul class="list">
+                     <li>Opción 1</li>
+                     <li>Opción 2</li>
+                     <li>Opción 3</li>
+                  </ul>
+
+               </form>
+            </div>
+
+         </div>
+      </div>
+
+   </section>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src="usuarios.js"></script>
+<script>
+    cargarUsuarios();
+   function showForm(formId) {
+      // Oculta todos los formularios
+      var forms = document.getElementsByClassName("form-peice");
+      for (var i = 0; i < forms.length; i++) {
+         forms[i].style.display = "none";
+      }
+      
+      // Muestra el formulario seleccionado
+      var form = document.getElementById(formId);
+      form.style.display = "block";
+   }
+</script>
+
+</body>
+</html>

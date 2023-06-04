@@ -53,7 +53,7 @@ async function listaProductos(){
 async function cargarInformacion() {
     let id_producto = document.getElementById("referencia-actualizar").value;
     console.log(id_producto);
-    let response = await fetch(`./api/productos/actualizar/{id_producto}`, {
+    let response = await fetch(`./api/productos/actualizar/${id_producto}`, {
         method: 'GET',
         Headers: {
 

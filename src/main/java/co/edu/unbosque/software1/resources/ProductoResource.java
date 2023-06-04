@@ -44,9 +44,31 @@ public class ProductoResource {
     @Path("actualizar/{id_producto}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
+    public Response consultar(@PathParam("id_producto") int id_producto){
+        Response response = null;
+        productoService = new ProductoService();
+        try{
+            producto=productoService.consultarProducto(id_producto);
+            if (producto!= null){
+                response = Response.ok().entity(producto).build();
+            }else{
+                response=Response.status(404).entity(new ExceptionMessage(404, "fallo al consultar")).build();
+            }
+
+        }catch (Exception e){
+            response=Response.status(404).entity(new ExceptionMessage(404, "error")).build();
+        }
+        return response;
+    }
+
+
+    @PUT
+    @Path("actualizar/{id_producto}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public Response actualizarProducto(@FormParam("name_nombre") String nombre, @FormParam("formactu") int id_producto,@FormParam("stock") int stock, @FormParam("precio_venta") double precio_venta,
                                        @FormParam("precio_compra") double precio_compra){
-        producto = new ProductoDto(id_producto, nombre, producto.getStockMin(),stock, producto.getNit_proveedor(), precio_venta,precio_compra, producto.getDetalle());
+        producto = new ProductoDto(id_producto, nombre, 1,stock, "", precio_venta,precio_compra, "");
         Response response = null;
         productoService = new ProductoService();
         System.out.println("entra en actualizar");

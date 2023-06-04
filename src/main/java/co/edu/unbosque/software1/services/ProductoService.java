@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ProductoService {
 
-    private ProductoDto producto = null;
+    private ProductoDto productoDto = null;
     private Conexion conexion;
     private PreparedStatement prestmt = null;
     private Statement stmt = null;
@@ -48,9 +48,9 @@ public class ProductoService {
                 precio_comprars = rs.getDouble("precio_compra");
                 detallers = rs.getString("detalle");
 
-                producto = new ProductoDto(id_productors, nombrers, stockMinrs, stockrs, nit_proveedorrs, precio_ventars, precio_comprars,
+                productoDto = new ProductoDto(id_productors, nombrers, stockMinrs, stockrs, nit_proveedorrs, precio_ventars, precio_comprars,
                         detallers);
-                System.out.println(producto);
+                System.out.println(productoDto);
             }
 
             rs.close();
@@ -63,7 +63,7 @@ public class ProductoService {
             conexion.desconectar();
             //return null;
         }
-        return producto;
+        return productoDto;
     }
 
 
@@ -96,10 +96,10 @@ public class ProductoService {
                 rsPrecio_compra = rs.getDouble("precio_compra");
                 rsdetalle = rs.getString("detalle");
 
-                producto = new ProductoDto(rsId_producto, rsnombre, rsStockMin, rsStock, rsNit_proveedor, rsPrecio_venta, rsPrecio_compra,
+                productoDto = new ProductoDto(rsId_producto, rsnombre, rsStockMin, rsStock, rsNit_proveedor, rsPrecio_venta, rsPrecio_compra,
                         rsdetalle);
-                lista.add(producto);
-                System.out.println(rsId_producto);
+                lista.add(productoDto);
+                System.out.println(productoDto.getNombre());
             }
 
             rs.close();
@@ -120,15 +120,14 @@ public class ProductoService {
     public boolean actualizarProducto(ProductoDto producto) {
         boolean respuesta = true;
         try {
-            String sql = "UPDATE producto set nombre = ?, stock = ?, nit_proveedor = ?, precio_venta = ?, precio_compra = ?";
+            String sql = "UPDATE producto set nombre = ?, stock = ?, precio_venta = ?, precio_compra = ?";
             conexion.conectar();
             Connection conn = conexion.getConnection();
             prestmt = conn.prepareStatement(sql);
             prestmt.setString(1, producto.getNombre());
             prestmt.setInt(2, producto.getStock());
-            prestmt.setString(3, producto.getNit_proveedor());
-            prestmt.setDouble(4, producto.getPrecio_venta());
-            prestmt.setDouble(5, producto.getPrecio_compra());
+            prestmt.setDouble(3, producto.getPrecio_venta());
+            prestmt.setDouble(4, producto.getPrecio_compra());
             prestmt.executeUpdate();
             respuesta = true;
             prestmt.close();
@@ -185,7 +184,7 @@ public class ProductoService {
             conexion.conectar();
             Connection conn = conexion.getConnection();
             prestmt = conn.prepareStatement(sql);
-            prestmt.setInt(1, producto.getId_producto());
+            prestmt.setInt(1, productoDto.getId_producto());
             prestmt.executeUpdate();
             respuesta = true;
             prestmt.close();

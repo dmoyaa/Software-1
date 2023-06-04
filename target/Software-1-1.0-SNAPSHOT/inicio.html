@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Operaciones | Codex </title>
+  <link rel="stylesheet" href="./inicio.css">
+  <link rel="stylesheet" href="./inicioBarra.css">
+</head>
+<body>
+<!-- Contenedor principal -->
+<div class="container" id="app">
+  <!-- Encabezado -->
+  <header>
+    <h1>Papelería Rosita</h1>
+
+    <!-- Navegación de pestañas -->
+    <nav class="amazing-tabs">
+      <!-- Contenedor de filtros -->
+      <div class="filters-container">
+        <div class="filters-wrapper">
+          <!-- Pestañas de filtros -->
+          <ul class="filter-tabs">
+            <li>
+              <!-- Botón de filtro (Venta) -->
+              <button class="filter-button filter-active" data-translate-value="0" onclick="animateAndRedirect('Venta.html');">
+                Venta
+              </button>
+
+            </li>
+            <li>
+              <!-- Botón de filtro (Compra) -->
+              <button class="filter-button" data-translate-value="150%" onclick="animateAndRedirect('Compra.html');">
+                Compra
+              </button>
+            </li>
+            <li>
+              <!-- Botón de filtro (Producto) -->
+              <button class="filter-button" data-translate-value="300%" onclick="animateAndRedirect('Producto.html');">
+                Producto
+              </button>
+
+
+            </li>
+          </ul>
+
+          <!-- Slider del filtro -->
+          <div class="filter-slider" aria-hidden="true">
+            <div class="filter-slider-rect">&nbsp;</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenedor de pestañas principales -->
+      <div class="main-tabs-container">
+        <div class="main-tabs-wrapper">
+          <!-- Pestañas principales  -->
+          <ul class="main-tabs">
+
+            <li>
+              <!-- Botón de pestaña principal "+" (Agregar) -->
+              <button class="round-button gallery active" style="--round-button-active-color: #2962ff" data-translate-value="0%" data-color="blue">
+                <svg fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                </svg>
+              </button>
+            </li>
+
+            <li>
+              <!-- Botón de pestaña principal (Campana)-->
+              <button class="round-button campana" style="--round-button-active-color: #aa00ff" data-translate-value="138%" data-color="purple" >
+                <svg fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
+                </svg>
+              </button>
+            </li>
+
+            <li>
+              <!-- Botón de pestaña principal (Cuaderno - inventario) -->
+              <button class="round-button inventario" style="--round-button-active-color: #ff7ea8" data-translate-value="275%" data-color="pink">
+                <svg fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M2,2v12h12V2H2z M13,13H3V3h10V13z M10,5H6v1h4V5z M10,7H6v1h4V7z M10,9H6v1h4V9z"></path>
+                </svg>
+              </button>
+            </li>
+
+            <li>
+              <!-- Botón de pestaña principal (Persona) -->
+              <button class="round-button person-button" style="--round-button-active-color: #23a340" data-translate-value="413%" data-color="green" >
+                <svg fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M8 1.25c-1.38 0-2.5 1.12-2.5 2.5 0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5c0-1.38-1.12-2.5-2.5-2.5zm0 10.75c-2.97 0-6.5 1.5-6.5 4.5v.75h13v-.75c0-3-3.53-4.5-6.5-4.5z"></path>
+                </svg>
+              </button>
+
+
+              <div class="combobox">
+                <select id="select-option" onchange="handleOptionChange(this)">
+                  <option value="opcion1">-Seleccione-</option>
+                  <option value="opcion1">Proveedores</option>
+                  <option value="opcion2">Usuarios</option>
+                  <option value="opcion3">Clientes</option>
+                </select>
+              </div>
+
+            </li>
+
+          </ul>
+          <div class="main-slider" aria-hidden="true">
+            <div class="main-slider-circle">&nbsp;</div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div>
+      <button class="logout-btn">Cerrar Sesión</button>
+    </div>
+
+  </header>
+
+  <section>
+    <div class="card">
+      <div class="card-info">
+        <!-- Título de la tarjeta -->
+        <h1 id="card-info-title"> ¡Lo mejor que puedes encontrar! </h1>
+        <!-- Descripción de la tarjeta -->
+        <p id="card-info-desc"> Descubre el paraíso de la creatividad en nuestra papelería. Sumérgete en un mundo de colores vibrantes, diseños cautivadores y productos únicos. Encuentra todo lo que necesitas para plasmar tus ideas y expresar tu estilo.</p>
+        <!-- Enlace para obtener más detalles -->
+
+      </div>
+      <div class="card-photo">
+        <!-- Foto de la tarjeta -->
+        <img src="./imagenes/imagen6.jpg">
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/vue"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+<script src="./inicio.js"></script>
+<script src="./inicioBarra.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  function handleOptionChange(select) {
+    var selectedOption = select.value;
+    if (selectedOption === "opcion1") {
+      animateAndRedirect("Proveedor.html");
+    } else if (selectedOption === "opcion2") {
+      animateAndRedirect("Usuarios.html");
+    } else if (selectedOption === "opcion3") {
+      animateAndRedirect("Clientes.html");
+    }
+  }
+
+  function animateAndRedirect(url) {
+    // Realizar la animación aquí
+
+    // Retraso antes de redirigir a la página
+    setTimeout(function() {
+      window.location.href = url;
+    }, 1000); // Retraso de 1 segundo (1000 milisegundos)
+  }
+</script>
+
+
+</body>
+</html>

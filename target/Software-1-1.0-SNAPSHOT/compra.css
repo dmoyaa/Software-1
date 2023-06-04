@@ -1,0 +1,507 @@
+/* Estilos generales del documento */
+
+/* Configuración de la fuente y el fondo del cuerpo */
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #ecfaec;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    max-width: 900px;
+  }
+
+  /* Estilos para enlaces */
+  a {
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  /* Estilos para los campos de entrada */
+  input {
+    outline: none !important;
+  }
+  
+  /* Estilos para encabezado h1 */
+  h1 {
+    
+    text-align: center;/* Alineación centrada del texto */
+    text-transform: uppercase; /* Transformación de texto en mayúsculas */
+    margin-bottom: 40px; /* Margen inferior de 40 píxeles */
+    font-weight: 700; /* Peso de fuente en negrita (700) */
+  }
+  
+  /* Estilos para el contenedor del formulario */
+  section#formHolder {
+    padding: 50px 0;/* Espaciado interno de 50 píxeles en la parte superior e inferior */
+  }
+  
+  /* Estilos para la marca */
+  .brand {
+    
+    padding: 20px;/* Espaciado interno de 20 píxeles */
+    background: url(https://goo.gl/A0ynht);/* Imagen de fondo */
+    background-size: cover;/* Ajuste de tamaño de la imagen de fondo */
+    background-position: center center;/* Posicionamiento de la imagen de fondo en el centro */
+    color: #fff;/* Color del texto en la marca */
+    min-height: 540px;/* Altura mínima de 540 píxeles */
+    position: relative;/* Posición relativa */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); /* Sombra del cuadro */
+    transition: all 0.6s cubic-bezier(1, -0.375, 0.285, 0.995);/* Transición animada de todos los estilos durante 0.6 segundos con una curva de aceleración personalizada */
+    z-index: 9999;/* Índice z para controlar el apilamiento */
+  }
+  
+  /* Estilos para la marca cuando está activa */
+.brand.active {
+    width: 100%;/* Ancho del elemento al 100% */
+  }
+  
+  /* Pseudo-elemento ::before para la marca */
+  .brand::before {
+  
+    content: "";  /* Contenido vacío */
+    display: block;/* Mostrar como bloque */
+    width: 100%;/* Ancho del elemento al 100% */
+    height: 100%; /* Altura del elemento al 100% */
+    position: absolute;/* Posición absoluta */
+    top: 0;/* Posicionamiento en la esquina superior izquierda */
+    left: 0;
+    background: rgba(0, 0, 0, 0.85);/* Fondo semi-transparente */
+    z-index: -1; /* Índice z negativo para colocarlo detrás de otros elementos */
+  }
+  
+  /* Estilos para el enlace de logo dentro de la marca */
+  .brand a.logo {
+    
+    color: #d6aeeb;/* Color del texto del enlace */
+    font-size: 20px;/* Tamaño de fuente de 20 píxeles */
+    font-weight: 700;/* Peso de fuente en negrita (700) */
+    text-decoration: none;/* Sin decoración de texto */
+    line-height: 1em;/* Altura de línea de 1em */
+  }
+  
+  /* Estilos para el elemento span dentro del enlace de logo */
+  .brand a.logo span {
+    
+    font-size: 30px;/* Tamaño de fuente de 30 píxeles */
+    color: #fff;/* Color del texto */
+    transform: translateX(-5px);/* Desplazamiento horizontal del texto en -5 píxeles */
+    display: inline-block;/* Mostrar como bloque en línea */
+  }
+  
+  /* Estilos para el contenedor de encabezado dentro de la marca */
+  .brand .heading {
+    
+    position: absolute;/* Posición absoluta */
+    top: 50%; /* Posicionamiento en el centro vertical y horizontal */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;/* Alineación centrada del texto */
+    transition: all 0.6s;/* Transición animada de todos los estilos durante 0.6 segundos */
+  }
+  
+  /* Estilos para el contenedor de encabezado cuando está activo */
+  .brand .heading.active {
+    
+    top: 100px;
+    left: 100px;/* Posicionamiento en la parte superior izquierda */
+    transform: translate(0);/* Transformación de translación a 0 */
+  }
+  
+  /* Estilos para el encabezado h2 dentro del contenedor de encabezado */
+  .brand .heading h2 {
+   
+    font-size: 70px; /* Tamaño de fuente de 70 píxeles */
+    font-weight: 700;/* Peso de fuente en negrita (700) */
+    text-transform: uppercase;/* Transformación de texto en mayúsculas */
+    margin-bottom: 0; /* Margen inferior de 0 */
+  }
+  
+  .brand .heading p {
+    font-size: 15px; /* Tamaño de fuente de 15 píxeles */
+    font-weight: 300; /* Grosor de fuente 300 */
+    text-transform: uppercase; /* Transformación de texto en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras de 2 píxeles */
+    white-space: 4px; /* Espacio en blanco de 4 píxeles */
+    font-family: "Raleway", sans-serif; /* Fuente "Raleway" o la fuente sans-serif predeterminada */
+  }
+  
+  .brand .success-msg {
+    width: 100%; /* Ancho del 100% */
+    text-align: center; /* Alineación centrada del texto */
+    position: absolute; /* Posición absoluta */
+    top: 50%; /* Posicionamiento vertical al 50% */
+    left: 50%; /* Posicionamiento horizontal al 50% */
+    transform: translate(-50%, -50%); /* Desplazamiento en la posición centrada */
+    margin-top: 60px; /* Margen superior de 60 píxeles */
+  }
+  
+  .brand .success-msg p {
+    font-size: 25px; /* Tamaño de fuente de 25 píxeles */
+    font-weight: 400; /* Grosor de fuente 400 (normal) */
+    font-family: "Raleway", sans-serif; /* Fuente "Raleway" o la fuente sans-serif predeterminada */
+  }
+  
+  .brand .success-msg a {
+    font-size: 12px; /* Tamaño de fuente de 12 píxeles */
+    text-transform: uppercase; /* Transformación de texto en mayúsculas */
+    padding: 8px 30px; /* Relleno de 8 píxeles en la parte superior e inferior, 30 píxeles en los lados izquierdo y derecho */
+    background: #d6aeeb; /* Fondo de color rojo (#f95959) */
+    text-decoration: none; /* Sin decoración de texto */
+    color: #fff; /* Color de texto blanco */
+    border-radius: 30px; /* Radio de borde de 30 píxeles para crear bordes redondeados */
+  }
+  
+  .brand .success-msg p, .brand .success-msg a {
+    transition: all 0.9s; /* Transición de todas las propiedades con una duración de 0.9 segundos */
+    transform: translateY(20px); /* Desplazamiento vertical de 20 píxeles (posición inicial) */
+    opacity: 0; /* Opacidad inicial de 0 (oculto) */
+  }
+  
+  .brand .success-msg p.active, .brand .success-msg a.active {
+    transform: translateY(0); /* Desplazamiento vertical de 0 (posición activa) */
+    opacity: 1; /* Opacidad de 1 (visible) */
+  }
+  
+  .form {
+    position: relative; /* Posición relativa */
+  }
+  
+  .form .form-peice {
+    background: #fff; /* Fondo de color blanco (#fff) */
+    min-height: 480px; /* Altura mínima de 480 píxeles */
+    margin-top: 30px; /* Margen superior de 30 píxeles */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Sombra de caja con desplazamiento de 3 píxeles en los ejes X e Y, desenfoque de 10 píxeles y opacidad de 0.2 */
+    color: #bbbbbb; /* Color de texto gris (#bbbbbb) */
+    padding: 30px 0 60px; /* Relleno de 30 píxeles en la parte superior, sin relleno en los lados izquierdo y derecho, y relleno de 60 píxeles en la parte inferior */
+    transition: all 0.9s cubic-bezier(1, -0.375, 0.285, 0.995); /* Transición de todas las propiedades con una duración de 0.9 segundos y una función de temporización personalizada */
+    position: absolute; /* Posición absoluta */
+    top: 0; /* Posicionamiento en la parte superior */
+    left: -30%; /* Posicionamiento a la izquierda con desplazamiento del 30% del ancho */
+    width: 130%; /* Ancho del 130% */
+    overflow: hidden; /* Ocultar el contenido que se desborda del contenedor */
+  }
+  
+  .form .form-peice.switched {
+    transform: translateX(-100%); /* Desplazamiento horizontal de -100% (posición cambiada) */
+    width: 100%; /* Ancho del 100% */
+    left: 0; /* Posicionamiento a la izquierda */
+  }
+  
+  .form form {
+    margin-bottom: 20px;
+    padding: 0 40px; /* Relleno de 0 en la parte superior e inferior, 40 píxeles en los lados izquierdo y derecho */
+    margin: 0; /* Margen de 0 */
+    width: 70%; /* Ancho del 70% del contenedor padre */
+    position: absolute; /* Posición absoluta */
+    top: 50%; /* Posicionamiento en la mitad superior del contenedor padre */
+    left: 60%; /* Posicionamiento en el 60% del contenedor padre */
+    transform: translate(-50%, -50%); /* Traslación para centrar el formulario vertical y horizontalmente */
+  }
+
+  .form form .form-groupto {
+    top: 30%;    
+    position: absolute; /* Posición relativa */
+    right: -170px;
+  }
+  
+  
+  .form form .form-groupto input[type="text"] {
+    width: 100px; /* Ajusta este valor según sea necesario */
+  }
+
+  .form form .form-groupfe {
+    top: -35px; /* Ajusta la posición vertical hacia arriba */
+    position: relative; /* Posición relativa */
+  }
+
+.form form .form-group {
+  top: -40px; /* Ajusta la posición vertical hacia arriba */
+  position: relative; /* Posición relativa */
+  width: 200px;
+}
+
+  .form form .form-group2 {
+  
+    top: -55px; /* Ajusta la posición vertical hacia arriba */
+    position: relative; /* Posición relativa */
+  }
+
+
+  .select-container {
+    margin-top: -10px; /* Ajusta la altura del combobox*/
+    
+  }
+
+  .select-container2 {
+    position: absolute;
+    top: 95px; /* Ajusta este valor negativo según sea necesario */
+  }
+
+  .select-container3 {
+    position: absolute;
+    top: 145px; /* Ajusta este valor negativo según sea necesario */
+  }
+
+  .checkbox-container {
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+ }
+
+ 
+ .form-groupfepe {
+  display: none; /* Ocultar inicialmente el campo de fecha */
+  position: relative;
+  top: -20px;
+ } 
+
+ .form-group3 {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .checkbox-container {
+    display: inline-flex;
+    align-items: center;
+    position: absolute;
+    top: 190px;
+ }
+
+ .checkbox-container2 {
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  top:  190px;
+  right: 50px;
+ }
+  
+  .checkbox-container input[type="checkbox"],
+  .checkbox-container2 input[type="checkbox"] {
+    animation: none;
+  }
+  
+  
+  .checkbox-container label {
+    font-weight: bold;
+  }
+  
+  
+  .custom-label {
+    position: relative;
+    top: -40px; /* Ajusta este valor según sea necesario */
+    right: -140px; /* Ajusta este valor según sea necesario */
+    width: 100px;
+  }
+
+  .custom-label2 {
+    position: relative;
+    top: 10px; /* Ajusta este valor según sea necesario */
+    right: -70px; /* Ajusta este valor según sea necesario */
+    width: 100px;
+  }
+
+ .custom-button {
+    position: absolute;
+    bottom: 50px; /* Ajusta este valor según sea necesario */
+    left: 60px;
+   }
+  
+  .checkbox-container input[type="checkbox"] {
+    margin-right: 5px;
+  }
+
+  
+ .list {
+  margin-top: 60px;
+  list-style-type: square;
+}
+
+.list li {
+  margin-bottom: 5px;
+}
+  
+
+
+
+  .form form label {
+    margin-bottom: 10px;
+    top: -20px;
+    font-size: 12px; /* Tamaño de fuente de 12 píxeles */
+    font-weight: 400; /* Grosor de fuente 400 (normal) */
+    text-transform: uppercase; /* Transformación de texto en mayúsculas */
+    font-family: "Montserrat", sans-serif; /* Fuente "Montserrat" o la fuente sans-serif predeterminada */
+    transform: translateY(40px); /* Traslación vertical de 40 píxeles */
+    transition: all 0.4s; /* Transición de todas las propiedades con una duración de 0.4 segundos */
+    cursor: text; /* Cursor de texto */
+    z-index: -1; /* Índice Z negativo para colocar la etiqueta detrás del elemento de entrada */
+  }
+  
+  .form form label.active {
+    transform: translateY(10px); /* Traslación vertical de 10 píxeles */
+    font-size: 10px; /* Tamaño de fuente de 10 píxeles */
+  }
+  
+  .form form label.fontSwitch {
+    font-family: "Raleway", sans-serif !important; /* Fuente "Raleway" o la fuente sans-serif predeterminada con importancia importante */
+    font-weight: 600; /* Grosor de fuente 600 (negrita) */
+    
+  }
+  
+  .form form input:not([type=submit]) {
+    background: none; /* Fondo transparente */
+    outline: none; /* Sin contorno */
+    border: none; /* Sin borde */
+    display: block; /* Mostrar como bloque */
+    padding: 10px 0; /* Espaciado interno */
+    width: 100%; /* Ancho del elemento */
+    border-bottom: 1px solid #eee; /* Borde inferior */
+    color: #444; /* Color del texto */
+    font-size: 15px; /* Tamaño de fuente */
+    font-family: "Montserrat", sans-serif; /* Fuente */
+    z-index: 1; /* Capa z */
+  }
+  
+  .form form input:not([type=submit]).hasError {
+    border-color: #f95959; /* Color del borde en caso de error */
+  }
+  
+  .form form span.error {
+    color: #f95959; /* Color del texto de error */
+    font-family: "Montserrat", sans-serif; /* Fuente */
+    font-size: 12px; /* Tamaño de fuente */
+    position: absolute; /* Posición absoluta */
+    bottom: -20px; /* Posición en la parte inferior */
+    right: 0; /* Posición a la derecha */
+    display: none; /* Oculto por defecto */
+  }
+  
+  .form form input[type=password] {
+    color: #f95959; /* Color del texto para el campo de contraseña */
+  }
+  
+  .form form .CTA {
+    margin-top: 30px; /* Margen superior */
+  }
+
+  .form form .CTA1 {
+    margin-top: 30px; /* Margen superior */
+  }
+  
+  
+  .form form .CTA input {
+    font-size: 12px; /* Tamaño de fuente */
+    text-transform: uppercase; /* Transformación de texto en mayúsculas */
+    padding: 5px 30px; /* Espaciado interno */
+    background: #d6aeeb; /* Fondo */
+    color: #fff; /* Color del texto */
+    border-radius: 30px; /* Radio de borde */
+    margin-right: 20px; /* Margen derecho */
+    border: none; /* Sin borde */
+    font-family: "Montserrat", sans-serif; /* Fuente */
+  }
+  
+  .form form .CTA a.switch {
+    font-size: 13px; /* Tamaño de fuente */
+    font-weight: 400; /* Peso de la fuente */
+    font-family: "Montserrat", sans-serif; /* Fuente */
+    color: #d6aeeb; /* Color del texto */
+    text-decoration: underline; /* Subrayado */
+    transition: all 0.3s; /* Transición */
+  }
+  
+  .form form .CTA a.switch:hover {
+    color: #d6aeeb; /* Color del texto al pasar el cursor */
+  }
+  
+  footer {
+    text-align: center; /* Alineación de texto al centro */
+  }
+  
+  footer p {
+    color: #d6aeeb; /* Color del texto */
+  }
+  
+  footer p a,
+  footer p a:focus {
+    color: #d6aeeb; /* Color del texto de enlace */
+    transition: all 0.3s; /* Transición */
+    text-decoration: none !important; /* Sin decoración de texto (importante) */
+  }
+  
+  footer p a:hover,
+  footer p a:focus:hover {
+    color: #f95959; /* Color del texto de enlace al pasar el cursor */
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      overflow: hidden; /* Ocultar desbordamiento */
+    }
+  
+    section#formHolder {
+      padding: 0; /* Sin relleno */
+    }
+  
+    section#formHolder div.brand {
+      min-height: 200px !important; /* Altura mínima (importante) */
+    }
+  
+    section#formHolder div.brand.active {
+      min-height: 100vh !important; /* Altura mínima (importante) */
+    }
+  
+    section#formHolder div.brand .heading.active {
+      top: 200px; /* Posición superior */
+      left: 50%; /* Posición izquierda */
+      transform: translate(-50%, -50%); /* Transformación */
+    }
+  
+    section#formHolder div.brand .success-msg p {
+      font-size: 16px; /* Tamaño de fuente */
+    }
+  
+    section#formHolder div.brand .success-msg a {
+      padding: 5px 30px; /* Espaciado interno */
+      font-size: 10px; /* Tamaño de fuente */
+    }
+  
+    section#formHolder .form {
+      width: 80vw; /* Ancho del formulario */
+      min-height: 500px; /* Altura mínima del formulario */
+      margin-left: 10vw; /* Margen izquierdo del formulario */
+    }
+  
+    section#formHolder .form .form-peice {
+      margin: 0; /* Sin margen */
+      top: 0; /* Posición superior */
+      left: 0; /* Posición izquierda */
+      width: 100% !important; /* Ancho del formulario (importante) */
+      transition: all 0.5s ease-in-out; /* Transición */
+    }
+  
+    section#formHolder .form .form-peice.switched {
+      transform: translateY(-100%); /* Transformación */
+      width: 100%; /* Ancho del formulario */
+      left: 0; /* Posición izquierda */
+    }
+  
+    section#formHolder .form .form-peice > form {
+      width: 100% !important; /* Ancho del formulario (importante) */
+      padding: 60px; /* Relleno */
+      left: 50%; /* Posición izquierda */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    section#formHolder .form {
+      width: 100vw; /* Ancho del formulario */
+      margin-left: 0; /* Margen izquierdo del formulario */
+    }
+  
+    h2 {
+      font-size: 50px !important; /* Tamaño de fuente del encabezado (importante) */
+    }
+  }
+  
