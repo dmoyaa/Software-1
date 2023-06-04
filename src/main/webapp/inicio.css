@@ -58,6 +58,16 @@ header h1 {
 }
 /* Establece estilos para el título principal del encabezado, incluyendo la fuente y el color */
 
+.logout-btn {
+  font-family: "Allura", serif;
+  color: var(--dark-green);
+  font-size: 24px;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+
+}
+
 header ul {
   display: flex;
 }
