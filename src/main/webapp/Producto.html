@@ -42,20 +42,20 @@
 
                   <div class="form-group">
                      <label for="name">Nombre</label>
-                     <input type="text" name="name" id="name" class="name">
+                     <input type="text" name="name" id="name_nombre" class="name">
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group8">
-                    <label for="name">Proveedor</label>
+                    <label for="name">Producto</label>
                  </div>
 
                  <div class="select-container2">
-                    <select name="formapago" id="fpago" class="select">
-                       <option value="option1">Proveedor1</option>
-                       <option value="option2">Proveedor2</option>
-                       <option value="option3">Proveedor3</option>
-                       <option value="option4">Proveedor4</option>
+                    <select name="formactu" id="referencia-actualizar" onchange="cargarInformacion()" class="select">
+                       <option value="option1">Producto1</option>
+                       <option value="option2">Producto2</option>
+                       <option value="option3">Producto3</option>
+                       <option value="option4">Producto4</option>
                     </select>
                     <span class="error"></span>
                  </div>
@@ -68,7 +68,7 @@
 
                   <div class="form-group">
                      <label for="precio_venta">Precio Venta</label>
-                     <input type="number" name="precio_venta" id="precio_venta" class="precio-venta">
+                     <input type="number" name="precio_venta" id="precio_venta2" class="precio-venta">
                      <span class="error"></span>
                   </div>
 
@@ -104,7 +104,7 @@
                   
                   <div class="form-group">
                      <label for="stock">Stock</label>
-                     <input type="number" name="stock" id="stock" class="stock">
+                     <input type="number" name="stock2" id="stock2" class="stock2">
                      <span class="error"></span>
                   </div> 
                 
@@ -116,7 +116,7 @@
 
                   <div class="form-group">
                      <label for="precio_compra">Precio Compra</label>
-                     <input type="number" name="precio_compra" id="precio_compra" class="precio-compra">
+                     <input type="number" name="precio_compra2" id="precio_compra2" class="precio-compra">
                      <span class="error"></span>
                   </div>
 
@@ -148,7 +148,7 @@
                   </div>
 
                   <div class="select-container2">
-                     <select name="referencia" id="referencia" class="select">
+                     <select name="referencia" id="referencia-eliminar" class="select">
                         <option value="option1">Referencia1</option>
                         <option value="option2">Referencia2</option>
                         <option value="option3">Referencia3</option>
@@ -173,7 +173,7 @@
                   </div>
 
                   <div class="select-container2">
-                    <select name="referencia" id="referencia" class="select">
+                    <select name="referencia" id="referencia-consultar" class="select">
                        <option value="option1">Referencia1</option>
                        <option value="option2">Referencia2</option>
                        <option value="option3">Referencia3</option>
@@ -183,7 +183,7 @@
                  </div>
                   
                   <div class="CTA">
-                     <input type="submit" value="Consultar">
+                     <input type="submit" onclick="cons" value="Consultar">
                      <a href="#" class="switch" onclick="showForm('formActualizar')">Actualizar</a>
                   </div>
 
@@ -203,7 +203,9 @@
 </div>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src="Productos.js"></script>
 <script>
+    listaProductos();
    function showForm(formId) {
       // Oculta todos los formularios
       var forms = document.getElementsByClassName("form-peice");
