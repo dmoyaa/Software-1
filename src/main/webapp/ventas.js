@@ -31,33 +31,6 @@ async function cargarClientes(elemento) {
         });
 }
 
-async function ingresar() {
-    const form = document.getElementById("form-registrar");
-    event.preventDefault();
-    const formData = new FormData(form);
-    let seleccionado = document.getElementById("cedula").value;
-    try {
-        let response = await fetch(`./api/clients/agregar/${seleccionado}`, {
-            method: 'POST',
-            headers: {
-
-                "Content-Type": "application/x-www-form-urlencoded",
-            },
-
-            body: new URLSearchParams(formData),
-        });
-        let respuesta = await response.json();
-        if (respuesta.errorCode == 200) {
-            window.alert("Cliente: " + formData.get("name") + ", ¡INGRESADO exitosamente!.");
-        } else {
-            window.alert(resultado.message);
-        }
-    } catch (r) {
-        alert("Server Error: " + respuesta);
-        console.log(r + "!error.!");
-    }
-
-}
 
 async function actualizarDatosClienteConsulta() {
     const form = document.getElementById("formConsulta");
@@ -75,10 +48,19 @@ async function actualizarDatosClienteConsulta() {
             });
 
             if (response.ok) {
-                let data = await response.json();
-                let parametros = JSON.stringify(data, null, 2);
-                console.log(parametros);
-                window.alert(parametros);
+                const data = await response.json();
+
+
+                data.forEach((registro) => {
+
+                    const idventa = registro.id_venta;
+                    const cliente = registro.cliente;
+                    const total = registro.total;
+                    const fechaPago = registro.fecha_pago;
+                    const stringCompleto = `Factura:${idventa} Cliente: ${cliente}  Total: ${total}  Fecha óptima de pago: ${fechaPago}`;
+
+                    window.alert(stringCompleto);
+                });
             } else {
                 console.log('Error en la respuesta de la petición');
             }
@@ -89,7 +71,3 @@ async function actualizarDatosClienteConsulta() {
         window.alert("Por favor, ingresa una fecha válida");
     }
 }
-
-
-
-

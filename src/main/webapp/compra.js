@@ -148,6 +148,14 @@ async function insertarCompra() {
     } else {
         pago = "acredito";
     }
+    let resumen = "-----RESUMEN DE LA COMPRA REALIZADA-----";
+    resumenCompra.forEach(compra => {
+        resumen += "\nNombre producto: "+compra.nombre+"\nCantidad: "+compra.cantidad +"\nPrecio: "+compra.precio
+            +"\n----------------------------------------";
+
+    })
+    resumen += "\nPRECIO TOTAL DE LA COMPRA: "+total;
+    window.alert(resumen);
 
     let response = await fetch(`./api/compra/post/${proveedor}/${pago}`, {
         method: 'POST',
