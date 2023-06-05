@@ -13,7 +13,7 @@
         var form = document.getElementById(formId);
         form.style.display = "block";
         if (form.id.toString = 'formConsultar') {
-            elemento = 'consultas';
+            elemento = 'clientes';
             cargarClientes();
         }
         if (form.id.toString = 'formEliminar') {

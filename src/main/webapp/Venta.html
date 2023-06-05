@@ -1,181 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ventas | Codex</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,600" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-  <link rel="stylesheet" href="./venta.css">
+    <meta charset="UTF-8">
+    <title>Ventas | Codex</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,600" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="./venta.css">
 </head>
 <body>
 
 <div class="container">
-   <section id="formHolder">
+    <section id="formHolder">
 
-      <div class="row">
+        <div class="row">
 
-         <!--  Logotipo y encabezado -->
-         <div class="col-sm-6 brand">
-            <a href="inicio.html" class="logo">Inicio <span>.</span></a>
-            <div class="heading">
-                <p>Ingresar</p>
-                <p>Y</p>
-               <p>Consultar</p>
-               <p>Ventas</p>
-            </div>
+            <!--  Logotipo y encabezado -->
+            <div class="col-sm-6 brand">
+                <a href="inicio.html" class="logo">Inicio <span>.</span></a>
+                <div class="heading">
+                    <p>Ingresar</p>
+                    <p>Y</p>
+                    <p>Consultar</p>
+                    <p>Ventas</p>
+                </div>
 
-            <!--  Mensaje de éxito  -->
-            <div class="success-msg">
-               <p>¡Excelente! venta registrada</p>
-            </div>
-         </div>
-
-
-         <div class="col-sm-6 form">
-
-            <!--  Formulario de consulta -->
-            <div class="login form-peice switched">
-               <form class="login-form" action="#" method="post">
-                  <div class="form-groupfe">
-                     <label for="fechap">FECHA</label>
-                     <input type="date" name="fechap" id="fecha" required>
-                  </div>
-
-                  <div class="form-group2">
-                     <label for="name">CLIENTE - <small>Opcional</small></label>
-                  </div>
-                  <div class="select-container2">
-                     <select name="formapago" id="fpago" class="select">
-                       <option value="option1">Cliente1</option>
-                       <option value="option2">Cliente2</option>
-                       <option value="option3">Cliente3</option>
-                       <option value="option4">Cliente4</option>
-                     </select>
-                     <span class="error"></span>
-                   </div> 
-
-                  <div class="CTA">
-                     <input type="submit" value="Consultar">
-                     <a href="#" class="switch">Registrar</a>
-                  </div>
-
-                  
-
-               </form>
+                <!--  Mensaje de éxito  -->
+                <div class="success-msg">
+                    <p>¡Excelente! venta registrada</p>
+                </div>
             </div>
 
 
-            <!--  Formulario de registro -->
-            <div class="signup form-peice">
-               <form class="signup-form" action="#" method="post">
+            <div class="col-sm-6 form">
 
-                 <div class="form-groupfe">
-                    <label for="fechap">FECHA</label>
-                    <input type="date" name="fechap" id="fecha" required>
-                 </div>
+                <!--  Formulario de consulta -->
+                <div class="login form-peice switched">
+                    <form class="login-form" action="#" method="get" id="formConsulta" onsubmit="actualizarDatosClienteConsulta()">
+                        <div class="form-groupfe">
+                            <label for="fechap">FECHA</label>
+                            <input type="date" name="fechap" id="fechap" required>
+                        </div>
 
-                  <div class="form-group">
-                    <div class="label-container">
-                      <label for="fpago">FORMA DE PAGO</label>
-                    </div>
-                    <div class="select-container">
-                      <select name="formapago" id="fpago" class="select">
-                        <option value="option1">Efectivo</option>
-                        <option value="option2">Tarjeta</option>
-                        <option value="option3">Daviplata</option>
-                        <option value="option4">Nequi</option>
-                      </select>
-                      <span class="error"></span>
-                    </div>
-                  </div>
-
-                   
-                  <div class="form-group2">
-                     <label for="name">CLIENTE - <small>Opcional</small></label>
-                  </div>
-                  <div class="select-container2">
-                     <select name="formapago" id="fpago" class="select">
-                       <option value="option1">Cliente1</option>
-                       <option value="option2">Cliente2</option>
-                       <option value="option3">Cliente3</option>
-                       <option value="option4">Cliente4</option>
-                     </select>
-                     <span class="error"></span>
-                   </div> 
-
-               
-                   <div class="form-group3">
-                     <label for="total">PRODUCTO</label>
-                  </div> 
-                  <div class="select-container3">
-                     <select name="formapago" id="fpago" class="select">
-                       <option value="option1">Producto1</option>
-                       <option value="option2">Producto2</option>
-                       <option value="option3">Producto3</option>
-                       <option value="option4">Producto4</option>
-                     </select>
-                     
-                     <span class="error"></span>
-                   </div>
-                   
-                  <div class="form-groupto">
-                     <label for="cantidad">CANTIDAD</label>
-                     <input type="text" name="cantidad" id="cantidad" maxlength="3">
-                     <span class="error"></span>
-                  </div>
-                  
-                  <div class="form-group3">
-                     <div class="checkbox-container">
-                       <input type="checkbox" id="estadoCheckbox1" name="estadoPago" value="pagado">
-                       <span class="label-text">Pagado</span>
-                     </div>
-                     <div class="checkbox-container2">
-                       <input type="checkbox" id="estadoCheckbox2" name="estadoPago" value="noPagado">
-                       <span class="label-text">No pagado</span>
-                     </div>
-                   </div>
-                   
-                   <div class="form-groupfepe" id="fechaContainer">
-                     <label for="fechape">FECHA PAGO ESPERADO</label>
-                     <input type="date" name="fechape" id="fecha" required>
-                   </div>
-
-                   <script>
-                     // Obtener los elementos del DOM
-                     const checkboxNoPagado = document.getElementById('estadoCheckbox2');
-                     const fechaContainer = document.getElementById('fechaContainer');
-                 
-                     // Escuchar el evento de cambio en el checkbox "No pagado"
-                     checkboxNoPagado.addEventListener('change', function() {
-                       if (this.checked) {
-                         fechaContainer.style.display = 'block'; // Mostrar el campo de fecha
-                       } else {
-                         fechaContainer.style.display = 'none'; // Ocultar el campo de fecha
-                       }
-                     });
-                   </script>
-                   
-                  
-                  <button class="custom-button">Agregar</button>
-                  <label class="custom-label" for="fecha">Total</label>
-
-                  <div class="CTA">
-                     <input type="submit" value="Registrar" id="submit">
-                     <a href="#" class="switch">Consultar</a>
-                  </div>
+                        <div class="form-group2">
+                            <label> <small>Opcional</small></label>
+                        </div>
+                        <div class="form-group" >
+                            <select name="cedulacliente" id="cliente" class="select" onclick="cargarClientes('cliente')">
+                            </select>
+                            <span class="error"></span>
+                        </div>
+                        <div class="checkbox-container2">
+                            <input type="checkbox" id="Checkbox2" name="totalventas" value="true">
+                            <span class="label-text">Total ventas</span>
+                        </div>
+                        <div class="CTA">
+                            <input type="submit" value="Total ventas">
+                            <a href="#" class="switch">Registrar</a>
+                        </div>
 
 
-               </form>
+                    </form>
+                </div>
+
+
+                <!--  Formulario de registro -->
+                <div class="signup form-peice">
+                    <form class="signup-form" action="#" method="post" id="formVenta">
+
+                        <div class="form-groupfe">
+                            <label for="fechap">FECHA</label>
+                            <input type="date" name="fechap" id="fecha" required>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="label-container">
+                                <label for="fpago">FORMA DE PAGO</label>
+                            </div>
+                            <div class="select-container">
+                                <select name="formapago" id="fpago" class="select">
+                                    <option value="option1">Efectivo</option>
+                                    <option value="option2">Tarjeta</option>
+                                    <option value="option3">Daviplata</option>
+                                    <option value="option4">Nequi</option>
+                                </select>
+                                <span class="error"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group2">
+                            <label><small>Opcional</small></label>
+                        </div>
+                        <div class="select-container2" >
+                            <select name="formapago" id="cliente2" class="select" onclick= "cargarClientes('cliente2')" >
+
+                            </select>
+                            <span class="error"></span>
+                        </div>
+
+
+                        <div class="form-group3">
+                            <label for="total">PRODUCTO</label>
+                        </div>
+                        <div class="select-container3">
+                            <select name="formapago" id="fpago" class="select">
+                                <option value="option1">Producto1</option>
+                                <option value="option2">Producto2</option>
+                                <option value="option3">Producto3</option>
+                                <option value="option4">Producto4</option>
+                            </select>
+
+                            <span class="error"></span>
+                        </div>
+
+                        <div class="form-groupto">
+                            <label for="cantidad">CANTIDAD</label>
+                            <input type="text" name="cantidad" id="cantidad" maxlength="3">
+                            <span class="error"></span>
+                        </div>
+
+                        <div class="form-group3">
+                            <div class="checkbox-container">
+                                <input type="checkbox" id="estadoCheckbox1" name="estadoPago" value="pagado">
+                                <span class="label-text">Pagado</span>
+                            </div>
+                            <div class="checkbox-container2">
+                                <input type="checkbox" id="estadoCheckbox2" name="estadoPago" value="noPagado">
+                                <span class="label-text">No pagado</span>
+                            </div>
+                        </div>
+
+                        <div class="form-groupfepe" id="fechaContainer">
+                            <label for="fechape">FECHA PAGO ESPERADO</label>
+                            <input type="date" name="fechape" id="fecha" required>
+                        </div>
+
+                        <script>
+                            // Obtener los elementos del DOM
+                            const checkboxNoPagado = document.getElementById('estadoCheckbox2');
+                            const fechaContainer = document.getElementById('fechaContainer');
+
+                            // Escuchar el evento de cambio en el checkbox "No pagado"
+                            checkboxNoPagado.addEventListener('change', function () {
+                                if (this.checked) {
+                                    fechaContainer.style.display = 'block'; // Mostrar el campo de fecha
+                                } else {
+                                    fechaContainer.style.display = 'none'; // Ocultar el campo de fecha
+                                }
+                            });
+                        </script>
+
+
+                        <button class="custom-button">Agregar</button>
+                        <label class="custom-label" for="fecha">Total</label>
+
+                        <div class="CTA">
+                            <input type="submit" value="Registrar" id="submit">
+                            <a href="#" class="switch">Consultar</a>
+                        </div>
+
+
+                    </form>
+                </div>
             </div>
-         </div>
-      </div>
+        </div>
 
-   </section>
+    </section>
 </div>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-<script  src="./script.js"></script>
+<script src="./ventas.js"></script>
+<script src="./script.js"></script>
 
 </body>
 </html>
