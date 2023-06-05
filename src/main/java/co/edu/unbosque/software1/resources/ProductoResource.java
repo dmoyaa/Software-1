@@ -41,37 +41,32 @@ public class ProductoResource {
     }
 
     @GET
-    @Path("/actualizar/{id_producto}")
+    @Path("actualizar/{id_producto}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response consultar(@PathParam("id_producto") int id_producto){
         Response response = null;
         productoService = new ProductoService();
-        System.out.println("consulta");
         try{
             producto=productoService.consultarProducto(id_producto);
             if (producto!= null){
                 response = Response.ok().entity(producto).build();
-                System.out.println("ok");
             }else{
                 response=Response.status(404).entity(new ExceptionMessage(404, "fallo al consultar")).build();
-                System.out.println("no ok");
             }
 
         }catch (Exception e){
             response=Response.status(404).entity(new ExceptionMessage(404, "error")).build();
-            System.out.println("peor que ok");
         }
         return response;
     }
 
 
     @PUT
-    @Path("/actualizar2/{id_producto}")
-    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    //@Produces(MediaType.APPLICATION_FORM_URLENCODED)
+    @Path("actualizar/{id_producto}")
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response actualizarProducto(@PathParam("id_producto") int id_producto, @FormParam("name_nombre") String nombre,@FormParam("stock") int stock, @FormParam("precio_venta") double precio_venta,
+    public Response actualizarProducto(@FormParam("name_nombre") String nombre, @FormParam("formactu") int id_producto,@FormParam("stock") int stock, @FormParam("precio_venta") double precio_venta,
                                        @FormParam("precio_compra") double precio_compra){
         producto = new ProductoDto(id_producto, nombre, 1,stock, "", precio_venta,precio_compra, "");
         Response response = null;
@@ -88,7 +83,6 @@ public class ProductoResource {
         } catch (Exception e){
             e.printStackTrace();
             response=Response.status(404).entity(new ExceptionMessage(404, "error")).build();
-
         }
 
         return response;
@@ -97,7 +91,7 @@ public class ProductoResource {
 
 
     @PUT
-    @Path("/eliminar/{id_producto}")
+    @Path("eliminar/{id_producto}")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
     public Response eliminar(@FormParam("referencia") int id_producto){
