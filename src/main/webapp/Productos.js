@@ -68,3 +68,64 @@ async function cargarInformacion() {
     $("#precio_compra").val(resultado.precio_compra);
 
 }
+
+
+async function actualizarProducto() {
+    const form = document.getElementById("form-actualizar")
+    event.preventDefault();
+    const formData = new FormData(form);
+    console.log(formData.get("name"));
+    let id_producto = document.getElementById("referencia-actualizar").value;
+    console.log(id_producto);
+
+    if (nit!="DEFAULT"){
+        let response = await fetch(`./api/productos/actualizar2/${id_producto}`,{
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: new URLSearchParams(formData),
+        });
+        console.log("Terminé");
+        let resultado = await response.json();
+        console.log(resultado);
+        if (resultado.errorCode == 200){
+            window.alert("Producto: "+formData.get("name")+", ¡editado exitosamente!.");
+        }
+        else{
+            window.alert(resultado.message);
+            console.log("paila")
+        }
+    }else{
+        window.alert("Por favor, selecciona primero un producto");
+    }
+
+    async function eliminarProducto() {
+        const form = document.querySelector("form")
+        event.preventDefault();
+        const formData = new FormData(form);
+        let id_producto = document.getElementById("referencia-eliminar").value;
+        if (id_producto!="DEFAULT"){
+            var r = window.confirm("¿Desea ejecutar la eliminación?");
+            if (r == true){
+                let response = await fetch(`./api/productos/eliminar/${id_producto}`,{
+                    method: 'PUT',
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    }
+                });
+                let resultado = await response.json();
+                console.log(resultado);
+                if (resultado.errorCode == 200){
+                    window.alert("¡Producto eliminado exitosamente!");
+                }
+                else{
+                    window.alert(resultado.message);
+                }
+            }
+        }else{
+            window.alert("Por favor, selecciona primero un Producto.")
+        }
+
+    }
+}

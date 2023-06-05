@@ -38,7 +38,7 @@
 
             <!-- Formulario de actualizar -->
             <div class="form-peice" id="formActualizar">
-               <form class="act-form" action="actualizar" method="post">
+               <form class="act-form" id="form-actualizar" action="actualizar" >
 
                   <div class="form-group">
                      <input type="text" name="name" placeholder="NOMBRE" id="name_nombre" class="name">
@@ -60,25 +60,24 @@
                  </div>
 
                   <div class="form-group">
-                     <label for="stock">Stock</label>
-                     <input type="number" name="stock" id="stock" class="stock">
+
+                     <input type="number" name="stock" placeholder="Stock" id="stock" class="stock">
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group">
-                     <label for="precio_venta">Precio Venta</label>
-                     <input type="number" name="precio_venta" id="precio_venta2" class="precio-venta">
+
+                     <input type="number" placeholder="Precio de venta" name="precio_venta" id="precio_venta2" class="precio-venta">
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group">
-                     <label for="precio_compra">Precio Compra</label>
-                     <input type="number" name="precio_compra" id="precio_compra" class="precio-compra">
+                     <input type="number" name="precio_compra" placeholder="Precio de compra" id="precio_compra" class="precio-compra">
                      <span class="error"></span>
                   </div>
                   
                   <div class="CTA">
-                     <input type="submit" value="Actualizar" onsubmit="">
+                     <input type="submit" value="Actualizar" onsubmit="actualizarProducto()">
                      <a href="#" class="switch" onclick="showForm('formRegistrar')">Registrar</a>
                   </div>
                </form>
@@ -86,36 +85,34 @@
 
             <!-- Formulario de registrar -->
             <div class="form-peice" id="formRegistrar">
-               <form class="signup-form" action="registrar" method="post">
+               <form class="signup-form" action="registrar">
                   
                   <div class="form-group">
-                     <label for="referencia">Referencia</label>
-                     <input type="text" name="referencia" id="referencia" class="referencia">
+
+                     <input type="text" name="referencia" placeholder="Referencia" id="referencia" class="referencia">
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group">
-                    <label for="name">Nombre</label>
+
                     <div class="form-inline">
-                      <input type="text" name="name" id="name" class="name">
+                      <input type="text" placeholder="Nombre" name="name" id="name" class="name">
                     </div>
                   </div>
                   
                   <div class="form-group">
-                     <label for="stock">Stock</label>
-                     <input type="number" name="stock2" id="stock2" class="stock2">
+
+                     <input type="number" placeholder="stock" name="stock2" id="stock2" class="stock2">
                      <span class="error"></span>
                   </div> 
                 
                   <div class="form-group">
-                     <label for="precio_venta">Precio Venta</label>
-                     <input type="number" name="precio_venta" id="precio_venta" class="precio-venta">
+                     <input type="number" placeholder="Precio de Venta" name="precio_venta" id="precio_venta" class="precio-venta">
                      <span class="error"></span>
                   </div>
 
                   <div class="form-group">
-                     <label for="precio_compra">Precio Compra</label>
-                     <input type="number" name="precio_compra2" id="precio_compra2" class="precio-compra">
+                     <input type="number" placeholder="Predio de Compra" name="precio_compra2" id="precio_compra2" class="precio-compra">
                      <span class="error"></span>
                   </div>
 
@@ -132,7 +129,7 @@
                   
 
                   <div class="CTA">
-                     <input type="submit" value="Registrar" id="submit">
+                     <input type="submit" value="Registrar" onsubmit="" id="submit">
                      <a href="#" class="switch" onclick="showForm('formEliminar')">Eliminar</a>
                   </div>
                </form>
@@ -140,7 +137,7 @@
 
             <!-- Formulario de eliminar -->
             <div class="form-peice" id="formEliminar">
-               <form class="elim-form" action="eliminar" method="post">
+               <form class="elim-form" action="eliminar">
                   
                   <div class="form-group8">
                      <label for="referencia">Producto</label>
@@ -165,7 +162,7 @@
 
             <!-- Formulario de consultar -->
             <div class="form-peice" id="formConsultar">
-               <form class="cons-form" action="consultar" method="post">
+               <form class="cons-form" action="consultar">
                   
                   <div class="form-group8">
                      <label for="referencia">Producto</label>
