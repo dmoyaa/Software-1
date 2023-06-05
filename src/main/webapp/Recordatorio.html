@@ -44,28 +44,34 @@
                             </div>
                         </section>
                         <span class="buttonText">Pago Proveedores</span>
+
+
+
                     </button>
                 </div>
 
 
-                <div id="container2">
-                    <button type="button" onclick="toggleActivity(event, 'container2')">
-                        <section class="activity">
+                <div id="container2" onclick="toggleActivity(event, 'container2')">
+                    <button type="button" onclick="actualizarCobrosPendientes()">
+
+                        <section class="activity" id="contenedor" >
                             <div class="item">
                                 <input type="checkbox" id="checkbox1-cobros" onclick="event.stopPropagation()">
-                                <label for="checkbox1">Recordatorio1.</label>
+                                <span id="checkbox1-cobros-label"></span>
                             </div>
                             <div class="item">
                                 <input type="checkbox" id="checkbox2-cobros" onclick="event.stopPropagation()">
-                                <label for="checkbox2">Recordatorio2.</label>
+                                <span id="checkbox2-cobros-label"></span>
                             </div>
                             <div class="item">
                                 <input type="checkbox" id="checkbox3-cobros" onclick="event.stopPropagation()">
-                                <label for="checkbox3">Recordatorio3.</label>
+                                <span id="checkbox3-cobros-label"></span>
                             </div>
+
                         </section>
-                        <span class="buttonText">Cobros Pendientes</span>
+                        <span class="buttonText" >Cobros Pendientes</span>
                     </button>
+
                 </div>
                 <div id="container3">
                     <button type="button" onclick="toggleActivity(event, 'container3')">
@@ -113,7 +119,7 @@
         container.classList.add("clicked");
         container.classList.toggle("active");
     }
-</script>
+</script> <script src="./recordatoriocobro.js"></script>
 
 </body>
 </html>

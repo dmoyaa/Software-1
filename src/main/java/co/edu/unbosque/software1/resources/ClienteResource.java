@@ -34,6 +34,7 @@ public class ClienteResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response get(@PathParam("cedula") String cedula) {
         Response response = null;
+
         ClienteDto cliente = new ClientesService().ciente(cedula);
         System.out.println(cliente);
         try {
@@ -128,7 +129,6 @@ public class ClienteResource {
     ) {
  Response response = null;
         Boolean cliente = new ClientesService().insert(cedula, name, lastname, direccion, phone);
-        System.out.println(cliente.toString());
         try {
             if (cliente) {
                 return response.ok().

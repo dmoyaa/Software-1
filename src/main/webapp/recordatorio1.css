@@ -11,7 +11,11 @@
   left: 50%;
   transform: translate(-110%, 50%);
 }
-
+#container2.active1 {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
 #container3 {
   position: right;
   bottom: 50%;
@@ -41,7 +45,7 @@
     font-size: 1.8rem;
     text-align: left;
     background: rgba(54, 47, 33, 0.1);
-    outline: 2px solid orangered;
+    outline: 0px solid orangered;
     border-radius: 0.6rem;
     transition: 300ms background ease-in-out;
   }
@@ -146,4 +150,3 @@
   html {
     font-size: 62.5%;
   }
-  
