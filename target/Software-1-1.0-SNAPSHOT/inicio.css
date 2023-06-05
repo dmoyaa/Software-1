@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300&display=swap");
+/* Importa las fuentes de Google Fonts: Allura y Poppins con un peso de 300 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Establece un estilo de reinicio para eliminar los márgenes, rellenos y tamaños de caja predeterminados */
+
+:root {
+  --green: #ecfaec;
+  --dark-green: #166639;
+  --white: #ffffff;
+  --black: #202020;
+}
+/* Define variables de CSS para algunos colores */
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--dark-green);
+  background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
+  color: var(--black);
+}
+/* Establece estilos para el cuerpo del documento, incluyendo el tamaño mínimo de la ventana visible, la alineación del contenido, la fuente y el color de fondo */
+
+ul {
+  list-style: none;
+}
+/* Elimina los estilos de lista por defecto */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* Elimina la decoración de texto de los enlaces y hereda el color de texto del elemento padre */
+
+.container {
+  width: 100%;
+  max-width: 900px;
+}
+/* Establece el ancho del contenedor principal */
+
+header {
+  padding: 2em 1em;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: center;
+}
+/* Establece estilos para el encabezado, incluyendo el relleno, la disposición en cuadrícula y la alineación de los elementos */
+
+header h1 {
+  font-family: "Allura", serif;
+  color: var(--dark-green);
+}
+/* Establece estilos para el título principal del encabezado, incluyendo la fuente y el color */
+
+.logout-btn {
+  font-family: "Allura", serif;
+  color: var(--dark-green);
+  font-size: 24px;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+
+}
+
+header ul {
+  display: flex;
+}
+/* Establece estilos para la lista en el encabezado, haciendo que los elementos se muestren en línea */
+
+header li {
+  margin-right: 3em;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+/* Establece estilos para los elementos de la lista en el encabezado, incluyendo el margen derecho, el tamaño de fuente y el peso de fuente */
+
+section {
+  width: 100%;
+  padding: 1em;
+}
+/* Establece estilos para las secciones, incluyendo el ancho y el relleno */
+
+section h4 {
+  opacity: 0.8;
+}
+/* Establece estilos para los subtítulos de las secciones, incluyendo la opacidad */
+
+li.active {
+  color: var(--dark-green);
+  border-bottom: 1px solid var(--dark-green);
+}
+/* Establece estilos para los elementos activos de una lista, incluyendo el color de texto y una línea inferior */
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  background-color: var(--white);
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+/* Establece estilos para las tarjetas, incluyendo la disposición en cuadrícula, las columnas, el color de fondo y la sombra */
+
+.card-info {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  padding: 1em 2em;
+}
+/* Establece estilos para la información de la tarjeta, incluyendo la disposición en cuadrícula y el relleno */
+
+.card-info h1 {
+  font-family: "Allura", serif;
+  font-size: 3.5rem;
+  color: var(--dark-green);
+  align-self: center;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+/* Establece estilos para el título de la información de la tarjeta, incluyendo la fuente, el tamaño y el color, así como la forma recortada */
+
+.card-info p {
+  font-size: 1rem;
+  font-weight: bold;
+  align-self: center;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  line-height: 30px;
+}
+/* Establece estilos para los párrafos de la información de la tarjeta, incluyendo el tamaño de fuente, el peso de fuente, la alineación y la forma recortada */
+
+.card-info a {
+  display: center;
+  grid-template-columns: max-content 20px;
+  align-items: center;
+  column-gap: 7px;
+  color: var(--dark-green);
+  font-size: 0.85rem;
+  font-weight: bold;
+  align-self: center;
+  justify-self: flex-end;
+  transform: translateX(0px);
+  transition: transform 0.3s 0.1s ease-out;
+}
+/* Establece estilos para los enlaces de la información de la tarjeta, incluyendo la disposición en cuadrícula, el tamaño de columna, la alineación de los elementos, el espacio entre columnas, el color de texto, el tamaño de fuente, el peso de fuente, la alineación propia y la transformación */
+
+.card-info a:hover {
+  transform: translateX(5px);
+}
+/* Establece estilos para los enlaces de la información de la tarjeta cuando se pasa el cursor sobre ellos, incluyendo una transformación */
+
+.card-info a:hover svg {
+  transform: translateX(5px);
+}
+/* Establece estilos para los íconos de los enlaces de la información de la tarjeta cuando se pasa el cursor sobre ellos, incluyendo una transformación */
+
+.card-info svg {
+  width: 20px;
+  height: 10px;
+  transform: translateX(0px);
+  transition: transform 0.3s ease-out;
+}
+/* Establece estilos para los íconos de los enlaces de la información de la tarjeta, incluyendo el ancho, la altura y la transformación */
+
+.card-info svg line {
+  stroke: var(--dark-green);
+}
+/* Establece estilos para las líneas de los íconos de los enlaces de la información de la tarjeta, incluyendo el color de trazo */
+
+.card-photo {
+  width: 460px;
+  object-fit: cover;
+  position: relative;
+  overflow: hidden;
+}
+/* Establece estilos para las fotos de las tarjetas, incluyendo el ancho, el ajuste del objeto, la posición y el desbordamiento */
+
+.card-photo img {
+  display: block;
+  max-width: 100%;
+  aspect-ratio: 1/1;
+}
+/* Establece estilos para las imágenes de las fotos de las tarjetas, incluyendo la visualización como bloque, el ancho máximo y la relación de aspecto */
+
+.card-photo a {
+  display: grid;
+  grid-template-columns: max-content 20px;
+  align-items: center;
+  column-gap: 7px;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  align-self: flex-start;
+  transform: translateX(0px);
+  transition: transform 0.3s 0.1s ease-out;
+  position: absolute;
+  z-index: 10;
+  bottom: 5%;
+  right: 8%;
+}
+/* Establece estilos para los enlaces de las fotos de las tarjetas, incluyendo la disposición en cuadrícula, el tamaño de columna, la alineación de los elementos, el espacio entre columnas, el color de texto, el tamaño de fuente, el peso de fuente, el espaciado de letras, la alineación propia, la transformación, la posición y el índice Z */
+
+.card-photo a:hover {
+  transform: translateX(5px);
+}
+/* Establece estilos para los enlaces de las fotos de las tarjetas cuando se pasa el cursor sobre ellos, incluyendo una transformación */
+
+.card-photo a:hover svg {
+  transform: translateX(5px);
+}
+/* Establece estilos para los íconos de los enlaces de las fotos de las tarjetas cuando se pasa el cursor sobre ellos, incluyendo una transformación */
+
+.card-photo svg {
+  width: 20px;
+  height: 10px;
+  transform: translateX(0px);
+  transition: transform 0.3s ease-out;
+}
+/* Establece estilos para los íconos de los enlaces de las fotos de las tarjetas, incluyendo el ancho, la altura y la transformación */
+
+.card-photo svg line {
+  stroke: var(--white);
+  stroke-width: 2;
+}
+/* Establece estilos para las líneas de los íconos de los enlaces de las fotos de las tarjetas, incluyendo el color de trazo y el ancho de trazo */
+
+.card-photo .mask {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  z-index: 5;
+  background-color: var(--white);
+}
+/* Establece estilos para la máscara de las fotos de las tarjetas, incluyendo la posición, la parte superior, el alto, el ancho, el índice Z y el color de fondo */
+
+#mask-1 {
+  left: 0;
+  transform: translateY(-100%);
+}
+/* Establece estilos para la máscara 1 de las fotos de las tarjetas, incluyendo la posición izquierda y la transformación en el eje Y */
+
+#mask-2 {
+  right: 0;
+  transform: translateY(100%);
+}
+/* Establece estilos para la máscara 2 de las fotos de las tarjetas, incluyendo la posición derecha y la transformación en el eje Y */
+
+footer {
+  background-color: var(--dark-green);
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--white);
+  font-size: 0.85rem;
+}
+/* Establece estilos para el pie de página, incluyendo el color de fondo, el relleno, la dirección de la flexión, la alineación de los elementos, el color de texto y el tamaño de fuente */
+
+footer p {
+  margin-bottom: 0.5em;
+}
+/* Establece estilos para los párrafos del pie de página, incluyendo el margen inferior */
+
+.social-links {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+/* Establece estilos para los enlaces sociales, incluyendo la disposición en línea, el espacio entre elementos y el margen inferior */
+
+.social-links a {
+  color: var(--white);
+  transition: transform 0.2s;
+}
+/* Establece estilos para los enlaces de los enlaces sociales, incluyendo el color de texto y una transición */
+
+.social-links a:hover {
+  transform: translateY(-3px);
+}
+/* Establece estilos para los enlaces de los enlaces sociales cuando se pasa el cursor sobre ellos, incluyendo una transformación */
+
+.credit {
+  opacity: 0.8;
+}
+/* Establece estilos para los créditos, incluyendo la opacidad */

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Compras | Codex</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,600" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="./compra.css">
+</head>
+<body>
+
+<div class="container">
+   <section id="formHolder">
+
+      <div class="row">
+
+         <!--  Logotipo y encabezado -->
+         <div class="col-sm-6 brand">
+            <a href="inicio.html" class="logo">Inicio <span>.</span></a>
+            <div class="heading">
+                <p>Ingresar</p>
+                <p>Y</p>
+               <p>Consultar</p>
+               <p>Compras</p>
+            </div>
+
+            <!--  Mensaje de éxito  -->
+            <div class="success-msg">
+               <p>¡Excelente! compra registrada</p>
+            </div>
+         </div>
+
+
+         <div class="col-sm-6 form">
+
+            <!--  Formulario de consulta -->
+            <div class="login form-peice switched">
+               <form class="login-form" action="#" method="post" id = "consulta-form"onsubmit="consultar()">
+                  <div class="form-group2">
+                     <label class="active"  >FECHA INICIAL</label>
+                     <input type="date"  name="fechap" id="fecha_inicio" required>
+                  </div>
+                  <div class="form-group2">
+                     <label class="active">FECHA FINAL</label>
+                     <input type="date"  name="fechap" id="fecha_final" required>
+                  </div>
+
+                  <div class="form-group">
+                     <label>PROVEEDOR    *OPCIONAL* </label>
+                  </div>
+                  <div class="select-container">
+                     <select name="lista-proveedores-consultar" id="provedores-consultar" class="select">
+                       <option value="option1">Proveedor1</option>
+                       <option value="option2">Proveedor2</option>
+                       <option value="option3">Proveedor3</option>
+                       <option value="option4">Proveedor4</option>
+                     </select>
+                     <span class="error"></span>
+                   </div> 
+
+                   
+                   
+
+                  <div class="CTA">
+                     <input type="submit" value="Consultar">
+                     <a href="#" class="switch">Registrar</a>
+                  </div>
+
+               </form>
+            </div>
+
+
+            <!--  Formulario de registro -->
+            <div class="signup form-peice">
+               <form id= "forminsertar"class="signup-form" action="#" method="POST" >
+
+                 <div class="form-groupfe">
+                    <label class="active">FECHA</label>
+                    <input type="date" name="fecha_registro" id="fecha_registro" required>
+                 </div>
+
+                  <div class="form-group">
+                    <div class="label-container">
+                      <label >PROVEEDOR</label>
+                    </div>
+                    <div class="select-container">
+                      <select name="lista-proveedor" id="proveedores-registro" class="select" onchange="confirmarReenvio()">
+                        <option value="option1">Proveedor1</option>
+                        <option value="option2">Proveedor2</option>
+                        <option value="option3">Proveedor3</option>
+                        <option value="option4">Proveedor4</option>
+                      </select>
+                      <span class="error"></span>
+
+
+                    </div>
+                  </div>
+
+               
+                   <div class="form-group2">
+                     <label>PRODUCTO</label>
+                  </div>
+                  <div class="select-container2">
+                     <select name="producto" id="producto-proveedor" class="select">
+                       <option value="option1">Producto1</option>
+                       <option value="option2">Producto2</option>
+                       <option value="option3">Producto3</option>
+                       <option value="option4">Producto4</option>
+                     </select>
+                     
+                     <span class="error"></span>
+                   </div>
+
+                   <div class="form-group">
+                    <label for="cantidad">CANTIDAD</label>
+                    <input type="number" name="cantidad" id="cantidad" min="10" required maxlength="3" required>
+
+                 </div>
+                  
+                
+                 <div class="form-group3">
+                    <div class="checkbox-container">
+                      <input type="checkbox" id="estadoCheckbox1" name="estadoPago" value="contado" onclick="desmarcarCredito()">
+                      <span class="label-text">Contado</span>
+                    </div>
+                    <div class="checkbox-container2">
+                      <input type="checkbox" id="estadoCheckbox2" name="estadoPago-credito" value="crédito" onclick="desmarcarContado()">
+                      <span class="label-text">A crédito</span>
+                    </div>
+                 </div>
+
+                  
+
+                 <div class="form-group3" id="fechaContainer">
+                     <label  class="active" >FECHA PAGO ESPERADO</label>
+                     <input type="date" name="fechape" id="fecha_credito" required>
+                 </div>
+
+
+                 <button type="button"  onclick="totalizar()">Agregar</button>
+                 <label name="total_pago" class="custom-label2" id="total_pagar" ffor="fecha">Total a pagar</label>
+
+                 <div class="CTA">
+                     <input type="submit"  onclick="insertarCompra()">
+                     <a href="#" class="switch">Consultar</a>
+                 </div>
+               </form>
+            </div>
+         </div>
+      </div>
+
+   </section>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script  src="./script.js"></script>
+<script src="compra.js"></script>
+<script>
+    function desmarcarCredito(){
+        const checkboxNoPagado = document.getElementById('estadoCheckbox2');
+        const checkboxContado = document.getElementById('estadoCheckbox1');
+        const dateControl = document.getElementById('fecha_credito')
+        if (checkboxContado.checked) {
+            console.log("tamo activo papi")
+            checkboxNoPagado.checked = false;
+            dateControl.value = "2017-06-01";
+        }
+
+    }
+    function desmarcarContado(){
+        const checkboxNoPagado = document.getElementById('estadoCheckbox2');
+        const checkboxContado = document.getElementById('estadoCheckbox1');
+        const dateControl = document.getElementById('fecha_credito')
+
+        if(checkboxNoPagado.checked){
+            checkboxContado.checked = false
+            dateControl.value = "";
+        }
+    }
+
+    cargarProveedoresCompra();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+/* Establece el box-sizing para todos los elementos */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Establece el tamaño de fuente base para el documento en 10px */
+html {
+  font-size: 73.5%;
+}
+
+
+/* Estilos para el cuerpo */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.4s ease-in-out;
+  background-color: var(--background-color) !important;
+}
+
+/* Estilos para los botones */
+button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+}
+
+/* Estilos para la barra de navegación */
+nav.amazing-tabs {
+  background-color: var(--white);
+  border-radius: 1.5rem;
+  user-select: none;
+  padding-top: 1rem;
+  max-width: 570px;
+}
+
+/* Estilos para los contenedores principales de las pestañas */
+.main-tabs-container {
+  padding: 0 1rem 1rem 1rem;
+}
+
+/* Estilos para los contenedores de las pestañas */
+.main-tabs-wrapper {
+  position: relative;
+}
+
+/* Estilos para las listas de pestañas */
+ul.main-tabs,
+ul.filter-tabs {
+  list-style-type: none;
+  display: flex;
+}
+
+/* Estilos para las pestañas principales */
+ul.main-tabs li {
+  display: inline-flex;
+  position: relative;
+  padding: 1.5rem;
+  z-index: 1;
+}
+
+/* Estilos para el avatar */
+.avatar, .avatar img {
+  height: 2.8rem;
+  width: 2.8rem;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Estilos para la imagen del avatar */
+.avatar img {
+  object-fit: cover;
+}
+
+/* Estilos para los botones redondos */
+.round-button {
+  height: 3.8rem;
+  width: 3.8rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--grey-900);
+  transition: color 0.2s ease-in-out;
+}
+
+/* Estilos para los botones redondos cuando se hace hover o están activos */
+.round-button:hover,
+.round-button.active {
+  color: var(--round-button-active-color);
+}
+
+/* Estilos para los iconos de los botones redondos */
+.round-button svg {
+  pointer-events: none;
+  height: 1.8rem;
+  width: 1.8rem;
+  transform: translate(0, 0);
+}
+
+/* Estilos para el control deslizante principal */
+.main-slider {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1.0rem;
+  z-index: 0;
+  transition: transform 0.4s ease-in-out;
+  transform: translateX(var(--translate-main-slider));
+}
+
+
+/* Estilos para el círculo del control deslizante principal */
+.main-slider-circle {
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  transition: background-color 0.4s ease-in-out;
+  background-color: var(--main-slider-color);
+}
+
+/* Estilos para la animación jello-horizontal */
+.animate-jello {
+  animation: jello-horizontal 0.9s both;
+}
+
+/* Animación keyframes para jello-horizontal */
+@keyframes jello-horizontal {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+/* Estilos para los contenedores de filtros */
+.filters-container {
+  overflow: hidden;
+  padding: 0 3rem;
+  transition: max-height 0.4s ease-in-out;
+  max-height: var(--filters-container-height);
+}
+
+/* Estilos para los contenedores de filtros (opacidad) */
+.filters-wrapper {
+  position: relative;
+  transition: opacity 0.2s ease-in-out;
+  opacity: var(--filters-wrapper-opacity);
+}
+
+/* Estilos para las pestañas de filtros */
+.filter-tabs {
+  border-radius: 1rem;
+  padding: 0.3rem;
+  overflow: hidden;
+  background-color:   #ecfaec;
+  max-width: 500px;
+}
+
+/* Estilos para las pestañas de filtros */
+.filter-tabs li {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1 0 33.33%;
+}
+
+/* Estilos para los botones de filtros */
+.filter-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  flex-grow: 0.5;
+  height: 2rem;
+  padding: 1rem;
+  color: #1b1a1a;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 50;
+  font-size: 1rem;
+}
+
+/* Estilos para los botones de filtros activos */
+.filter-button.filter-active {
+  transition: color 0.4s ease-in-out;
+  color: var(--grey-900);
+}
+
+/* Estilos para el control deslizante de filtros */
+.filter-slider {
+  pointer-events: none;
+  position: absolute;
+  padding: 0.3rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 1rem;
+  z-index: 0;
+}
+
+/* Estilos para los rectángulos del control deslizante de filtros */
+.filter-slider-rect {
+  height: 2rem;
+  width: 25%;
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  box-shadow: 0 0.1rem 1rem -0.4rem rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s ease-in-out;
+  transform: translateX(var(--translate-filters-slider));
+}
+
+
+.combobox {
+  
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 40%;
+  margin-left: 10px;
+}
+
+.combobox.show {
+  display: block;
+}
