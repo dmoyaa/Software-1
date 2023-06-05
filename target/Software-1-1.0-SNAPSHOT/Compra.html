@@ -71,82 +71,82 @@
             </div>
 
 
-            <!--  Formulario de registro -->
-            <div class="signup form-peice">
-               <form id= "forminsertar"class="signup-form" action="#" method="POST" >
+             <!--  Formulario de registro -->
+             <div class="signup form-peice">
+                 <form id= "forminsertar"class="signup-form" action="#" method="POST" >
 
-                 <div class="form-groupfe">
-                    <label class="active">FECHA</label>
-                    <input type="date" name="fecha_registro" id="fecha_registro" required>
-                 </div>
+                     <div class="form-groupfe">
+                         <label class="active">FECHA</label>
+                         <input type="date" name="fecha_registro" id="fecha_registro" required>
+                     </div>
 
-                  <div class="form-group">
-                    <div class="label-container">
-                      <label >PROVEEDOR</label>
-                    </div>
-                    <div class="select-container">
-                      <select name="lista-proveedor" id="proveedores-registro" class="select" onchange="confirmarReenvio()">
-                        <option value="option1">Proveedor1</option>
-                        <option value="option2">Proveedor2</option>
-                        <option value="option3">Proveedor3</option>
-                        <option value="option4">Proveedor4</option>
-                      </select>
-                      <span class="error"></span>
-
-
-                    </div>
-                  </div>
-
-               
-                   <div class="form-group2">
-                     <label>PRODUCTO</label>
-                  </div>
-                  <div class="select-container2">
-                     <select name="producto" id="producto-proveedor" class="select">
-                       <option value="option1">Producto1</option>
-                       <option value="option2">Producto2</option>
-                       <option value="option3">Producto3</option>
-                       <option value="option4">Producto4</option>
-                     </select>
-                     
-                     <span class="error"></span>
-                   </div>
-
-                   <div class="form-group">
-                    <label for="cantidad">CANTIDAD</label>
-                    <input type="number" name="cantidad" id="cantidad" min="10" required maxlength="3" required>
-
-                 </div>
-                  
-                
-                 <div class="form-group3">
-                    <div class="checkbox-container">
-                      <input type="checkbox" id="estadoCheckbox1" name="estadoPago" value="contado" onclick="desmarcarCredito()">
-                      <span class="label-text">Contado</span>
-                    </div>
-                    <div class="checkbox-container2">
-                      <input type="checkbox" id="estadoCheckbox2" name="estadoPago-credito" value="crédito" onclick="desmarcarContado()">
-                      <span class="label-text">A crédito</span>
-                    </div>
-                 </div>
-
-                  
-
-                 <div class="form-group3" id="fechaContainer">
-                     <label  class="active" >FECHA PAGO ESPERADO</label>
-                     <input type="date" name="fechape" id="fecha_credito" required>
-                 </div>
+                     <div class="form-group">
+                         <div class="label-container">
+                             <label >PROVEEDOR</label>
+                         </div>
+                         <div class="select-container">
+                             <select name="lista-proveedor" id="proveedores-registro" class="select" onchange="confirmarReenvio()">
+                                 <option value="option1">Proveedor1</option>
+                                 <option value="option2">Proveedor2</option>
+                                 <option value="option3">Proveedor3</option>
+                                 <option value="option4">Proveedor4</option>
+                             </select>
+                             <span class="error"></span>
 
 
-                 <button type="button"  onclick="totalizar()">Agregar</button>
-                 <label name="total_pago" class="custom-label2" id="total_pagar" ffor="fecha">Total a pagar</label>
+                         </div>
+                     </div>
 
-                 <div class="CTA">
-                     <input type="submit"  onclick="insertarCompra()">
-                     <a href="#" class="switch">Consultar</a>
-                 </div>
-               </form>
-            </div>
+
+                     <div class="form-group2">
+                         <label>PRODUCTO</label>
+                     </div>
+                     <div class="select-container2">
+                         <select name="producto" id="producto-proveedor" class="select">
+                             <option value="option1">Producto1</option>
+                             <option value="option2">Producto2</option>
+                             <option value="option3">Producto3</option>
+                             <option value="option4">Producto4</option>
+                         </select>
+
+                         <span class="error"></span>
+                     </div>
+
+                     <div class="form-group">
+                         <label for="cantidad">CANTIDAD</label>
+                         <input type="number" name="cantidad" id="cantidad" min="10" required maxlength="3" required>
+
+                     </div>
+
+
+                     <div class="form-group3">
+                         <div class="checkbox-container">
+                             <input type="checkbox" id="estadoCheckbox1" name="estadoPago" value="contado" onclick="desmarcarCredito()">
+                             <span class="label-text">Contado</span>
+                         </div>
+                         <div class="checkbox-container2">
+                             <input type="checkbox" id="estadoCheckbox2" name="estadoPago-credito" value="crédito" onclick="desmarcarContado()">
+                             <span class="label-text">A crédito</span>
+                         </div>
+                     </div>
+
+
+
+                     <div class="form-group3" id="fechaContainer">
+                         <label  class="active" >FECHA PAGO ESPERADO</label>
+                         <input type="date" name="fechape" id="fecha_credito" required>
+                     </div>
+
+
+                     <button type="button"  onclick="totalizar()">Agregar</button>
+                     <label name="total_pago" class="custom-label2" id="total_pagar" ffor="fecha">Total a pagar</label>
+
+                     <div class="CTA">
+                         <input type="submit"  onclick="insertarCompra()">
+                         <a href="#" class="switch">Consultar</a>
+                     </div>
+                 </form>
+             </div>
          </div>
       </div>
 
