@@ -44,7 +44,7 @@ async function verificarIngreso() {
     window.location.href="http://localhost:8080/Software-1-1.0-SNAPSHOT/inicio.html";
   }else{
     alert("Usuario no encontrado o contraseña incorrecta");
-
+    window.location.href="http://localhost:8080/Software-1-1.0-SNAPSHOT/index.html";
 
   }
 }
